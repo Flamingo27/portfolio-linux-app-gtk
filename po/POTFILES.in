@@ -1,0 +1,8 @@
+# List of source files containing translatable strings.
+# Please keep this file sorted alphabetically.
+data/org.alokparna.portfolio.gtk.desktop.in
+data/org.alokparna.portfolio.gtk.metainfo.xml.in
+data/org.alokparna.portfolio.gtk.gschema.xml
+src/main.c
+src/portfolio-linux-app-gtk-window.c
+src/portfolio-linux-app-gtk-window.ui
