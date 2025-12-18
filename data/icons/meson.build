@@ -1,4 +1,4 @@
-application_id = 'org.alokparna.portfolio.gtk'
+application_id = 'com.alokparna.portfolio.gtk'
 
 scalable_dir = 'hicolor' / 'scalable' / 'apps'
 install_data(

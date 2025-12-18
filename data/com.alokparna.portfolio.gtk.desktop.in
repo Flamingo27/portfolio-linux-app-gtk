@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=portfolio-linux-app-gtk
+Exec=portfolio-linux-app-gtk
+Icon=com.alokparna.portfolio.gtk
+Terminal=false
+Type=Application
+Categories=Utility;
+Keywords=GTK;
+StartupNotify=true
+DBusActivatable=true

@@ -1,5 +1,5 @@
 {
-    "id" : "org.alokparna.portfolio.gtk",
+    "id" : "com.alokparna.portfolio.gtk",
     "runtime" : "org.gnome.Platform",
     "runtime-version" : "48",
     "sdk" : "org.gnome.Sdk",
@@ -27,13 +27,10 @@
             "name" : "portfolio-linux-app-gtk",
             "builddir" : true,
             "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dprefix=/app"
-            ],
             "sources" : [
                 {
-                    "type" : "git",
-                    "url" : "file:///home/debarghaya/Documents/GitHub/Alu/portfolio-linux-app-gtk"
+                    "type" : "dir",
+                    "path" : "."
                 }
             ]
         }

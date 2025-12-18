@@ -35,7 +35,7 @@ main (int   argc,
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	app = portfolio_linux_app_gtk_application_new ("org.alokparna.portfolio.gtk", G_APPLICATION_DEFAULT_FLAGS);
+	app = portfolio_linux_app_gtk_application_new ("com.alokparna.portfolio.gtk", G_APPLICATION_DEFAULT_FLAGS);
 	ret = g_application_run (G_APPLICATION (app), argc, argv);
 
 	return ret;

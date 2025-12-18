@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+
+  <template class="HeroPage" parent="AdwBin">
+    <property name="child">
+      <object class="GtkCenterBox">
+        <property name="hexpand">1</property>
+        <property name="vexpand">1</property>
+
+        <property name="center-widget">
+          <object class="AdwClamp">
+            <property name="maximum-size">800</property>
+
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">20</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+
+                <!-- Name -->
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Alokparna Mitra</property>
+                    <property name="halign">center</property>
+                    <property name="justify">center</property>
+                    <style><class name="title-1"/></style>
+                  </object>
+                </child>
+
+                <!-- Title -->
+                <child>
+                  <object class="GtkLabel">
+                    <property name="label">Full-Stack Developer</property>
+                    <property name="halign">center</property>
+                    <property name="justify">center</property>
+                    <style><class name="title-3"/></style>
+                  </object>
+                </child>
+
+                <!-- Description (FIXED) -->
+                <child>
+                  <object class="GtkLabel">
+                    <property name="wrap">true</property>
+                    <property name="max-width-chars">60</property>
+                    <property name="justify">center</property>
+                    <property name="halign">center</property>
+                    <property name="xalign">0.5</property>
+                    <property name="label">
+Building innovative solutions at the intersection of AI, blockchain, and IoT.
+Passionate about creating impactful technology that solves real-world problems.
+                    </property>
+                    <style><class name="dim-label"/></style>
+                  </object>
+                </child>
+
+                <!-- Buttons -->
+                <child>
+                  <object class="GtkBox">
+                    <property name="spacing">12</property>
+                    <property name="halign">center</property>
+
+                    <child>
+                      <object class="GtkButton">
+                        <property name="label">GitHub</property>
+                        <property name="action-name">hero.open</property>
+                        <property name="action-target">'https://github.com/Flamingo27'</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton">
+                        <property name="label">LinkedIn</property>
+                        <property name="action-name">hero.open</property>
+                        <property name="action-target">'https://linkedin.com/in/alokparna-mitra'</property>
+                        <style><class name="suggested-action"/></style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- View My Work -> switch to About page -->
+                <child>
+                  <object class="GtkButton">
+                    <property name="label">View My Work</property>
+                    <property name="halign">center</property>
+                    <property name="action-name">win.show-about</property>
+                    <style><class name="flat"/></style>
+                  </object>
+                </child>
+
+              </object>
+            </property>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>
+

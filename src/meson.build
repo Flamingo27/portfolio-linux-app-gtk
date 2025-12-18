@@ -2,6 +2,12 @@ portfolio_linux_app_gtk_sources = [
   'main.c',
   'portfolio-linux-app-gtk-application.c',
   'portfolio-linux-app-gtk-window.c',
+  'portfolio-hero-page.c',
+  'portfolio-about-page.c',
+  'portfolio-experience-page.c',
+  'portfolio-projects-page.c',
+  'portfolio-skills-page.c',
+  'portfolio-contact-page.c',
 ]
 
 portfolio_linux_app_gtk_deps = [

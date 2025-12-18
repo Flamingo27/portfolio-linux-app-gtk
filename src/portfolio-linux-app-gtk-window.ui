@@ -3,13 +3,20 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
   <template class="PortfolioLinuxAppGtkWindow" parent="AdwApplicationWindow">
-    <property name="title" translatable="yes">Portfolio-linux-app-gtk</property>
+    <property name="title" translatable="yes">Alokparna Portfolio</property>
     <property name="default-width">800</property>
     <property name="default-height">600</property>
     <property name="content">
       <object class="AdwToolbarView">
         <child type="top">
           <object class="AdwHeaderBar">
+            <property name="show-end-title-buttons">True</property>
+            <property name="show-start-title-buttons">True</property>
+            <property name="title-widget">
+              <object class="AdwViewSwitcherTitle">
+                <property name="stack">view_stack</property>
+              </object>
+            </property>
             <child type="end">
               <object class="GtkMenuButton">
                 <property name="primary">True</property>
@@ -20,13 +27,83 @@
             </child>
           </object>
         </child>
-        <property name="content">
-          <object class="GtkLabel" id="label">
-            <property name="label" translatable="yes">Hello, World!</property>
-            <style>
-              <class name="title-1"/>
-            </style>
+        <child type="bottom">
+          <object class="AdwViewSwitcherBar">
+            <property name="stack">view_stack</property>
           </object>
+        </child>
+        <property name="content">
+          <object class="AdwViewStack" id="view_stack">
+            <property name="vexpand">True</property>
+
+                <!-- Hero / Welcome -->
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="title" translatable="yes">Hero</property>
+                    <property name="icon-name">emblem-favorite-symbolic</property>
+                    <property name="child">
+                      <object class="PortfolioHeroPage" id="hero_page"/>
+                    </property>
+                  </object>
+                </child>
+
+                <!-- About -->
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="name">about</property>
+                    <property name="title" translatable="yes">About</property>
+                    <property name="icon-name">avatar-default-symbolic</property>
+                    <property name="child">
+                      <object class="PortfolioAboutPage"/>
+                    </property>
+                  </object>
+                </child>
+
+                <!-- Experience -->
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="title" translatable="yes">Experience</property>
+                    <property name="icon-name">emblem-system-symbolic</property>
+                    <property name="child">
+                      <object class="PortfolioExperiencePage"/>
+                    </property>
+                  </object>
+                </child>
+
+                <!-- Projects -->
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="title" translatable="yes">Projects</property>
+                    <property name="icon-name">applications-development-symbolic</property>
+                    <property name="child">
+                      <object class="PortfolioProjectsPage"/>
+                    </property>
+                  </object>
+                </child>
+
+                <!-- Skills -->
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="title" translatable="yes">Skills</property>
+                    <property name="icon-name">starred-symbolic</property>
+                    <property name="child">
+                      <object class="PortfolioSkillsPage"/>
+                    </property>
+                  </object>
+                </child>
+
+                <!-- Contact -->
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="title" translatable="yes">Contact</property>
+                    <property name="icon-name">mail-send-symbolic</property>
+                    <property name="child">
+                      <object class="PortfolioContactPage"/>
+                    </property>
+                  </object>
+                </child>
+
+              </object>
         </property>
       </object>
     </property>

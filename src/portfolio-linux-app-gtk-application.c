@@ -40,7 +40,7 @@ portfolio_linux_app_gtk_application_new (const char        *application_id,
 	return g_object_new (PORTFOLIO_LINUX_APP_GTK_TYPE_APPLICATION,
 	                     "application-id", application_id,
 	                     "flags", flags,
-	                     "resource-base-path", "/org/alokparna/portfolio/gtk",
+	                     "resource-base-path", "/com/alokparna/portfolio/gtk",
 	                     NULL);
 }
 
@@ -74,7 +74,7 @@ portfolio_linux_app_gtk_application_about_action (GSimpleAction *action,
                                                   GVariant      *parameter,
                                                   gpointer       user_data)
 {
-	static const char *developers[] = {"Unknown", NULL};
+	static const char *developers[] = {"Alokparna Mitra", NULL};
 	PortfolioLinuxAppGtkApplication *self = user_data;
 	GtkWindow *window = NULL;
 
@@ -83,13 +83,13 @@ portfolio_linux_app_gtk_application_about_action (GSimpleAction *action,
 	window = gtk_application_get_active_window (GTK_APPLICATION (self));
 
 	adw_show_about_dialog (GTK_WIDGET (window),
-	                       "application-name", "portfolio-linux-app-gtk",
-	                       "application-icon", "org.alokparna.portfolio.gtk",
-	                       "developer-name", "Unknown",
+	                       "application-name", "Alokparna Portfolio",
+	                       "application-icon", "com.alokparna.portfolio.gtk",
+	                       "developer-name", "Alokparna Mitra",
 	                       "translator-credits", _("translator-credits"),
 	                       "version", "0.1.0",
 	                       "developers", developers,
-	                       "copyright", "© 2025 Unknown",
+	                       "copyright", "© 2025 Alokparna Mitra",
 	                       NULL);
 }
 
