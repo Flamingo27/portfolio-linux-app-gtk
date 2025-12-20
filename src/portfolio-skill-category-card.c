@@ -51,6 +51,10 @@ PortfolioSkillCategoryCard *
 portfolio_skill_category_card_new (const SkillCategory *skill_category)
 {
   PortfolioSkillCategoryCard *self = g_object_new (PORTFOLIO_TYPE_SKILL_CATEGORY_CARD, NULL);
+  gsize i;
+  GtkWidget *skill_row_box;
+  GtkWidget *bullet;
+  GtkWidget *skill_label;
 
   self->skill_category = skill_category;
 
@@ -60,15 +64,15 @@ portfolio_skill_category_card_new (const SkillCategory *skill_category)
 
   // Populate skills
   if (skill_category->skills != NULL) {
-      for (gsize i = 0; i < skill_category->n_skills; i++) {
-          GtkWidget *skill_row_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
+      for (i = 0; i < skill_category->n_skills; i++) {
+          skill_row_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 12);
           gtk_widget_set_valign (skill_row_box, GTK_ALIGN_START);
 
-          GtkWidget *bullet = gtk_image_new_from_icon_name ("media-record-symbolic");
+          bullet = gtk_image_new_from_icon_name ("media-record-symbolic");
           gtk_widget_add_css_class (bullet, "accent");
           gtk_widget_set_valign (bullet, GTK_ALIGN_START);
 
-          GtkWidget *skill_label = gtk_label_new(skill_category->skills[i]);
+          skill_label = gtk_label_new(skill_category->skills[i]);
           gtk_label_set_xalign (GTK_LABEL (skill_label), 0.0);
           gtk_label_set_wrap (GTK_LABEL (skill_label), TRUE);
           gtk_widget_set_valign (skill_label, GTK_ALIGN_START);

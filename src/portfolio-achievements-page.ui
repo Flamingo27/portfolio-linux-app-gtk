@@ -3,36 +3,25 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
 
-  <template class="PortfolioProjectsPage" parent="AdwBin">
+  <template class="PortfolioAchievementsPage" parent="AdwBin">
     <property name="child">
       <object class="AdwClamp">
         <property name="margin-top">24</property>
         <property name="margin-bottom">24</property>
         <property name="margin-start">24</property>
         <property name="margin-end">24</property>
-        <property name="vexpand">true</property>
+
         <property name="child">
           <object class="GtkBox">
             <property name="orientation">vertical</property>
             <property name="spacing">12</property>
-            <property name="vexpand">true</property>
             <child>
               <object class="GtkLabel">
-                <property name="label" translatable="yes">Featured Projects</property>
+                <property name="label" translatable="yes">Achievements &amp; Recognition</property>
                 <property name="wrap">True</property>
                 <property name="xalign">0</property>
                 <style>
                   <class name="title-2"/>
-                </style>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel">
-                <property name="label" translatable="yes">Innovative solutions across blockchain, AI, and IoT</property>
-                <property name="wrap">True</property>
-                <property name="xalign">0</property>
-                <style>
-                  <class name="body"/>
                 </style>
               </object>
             </child>
@@ -42,9 +31,13 @@
                 <property name="vscrollbar-policy">automatic</property>
                 <property name="vexpand">true</property>
                 <property name="child">
-                  <object class="GtkListBox" id="projects_list_box">
-                    <property name="selection-mode">none</property>
+                  <object class="GtkFlowBox" id="achievements_flowbox">
+                    <property name="valign">start</property>
+                    <property name="halign">center</property>
+                    <property name="row-spacing">16</property>
+                    <property name="column-spacing">16</property>
                     <property name="margin-top">12</property>
+                    <property name="selection-mode">none</property>
                   </object>
                 </property>
               </object>

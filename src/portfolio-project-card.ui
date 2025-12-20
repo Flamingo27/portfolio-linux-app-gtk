@@ -4,6 +4,7 @@
   <requires lib="Adw" version="1.0"/>
 
   <template class="PortfolioProjectCard" parent="AdwBin">
+    <property name="margin-bottom">12</property>
     <style>
       <class name="card"/>
     </style>

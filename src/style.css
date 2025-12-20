@@ -4,17 +4,19 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Apply margin-bottom to GtkListBoxRows that contain an element with class 'card' */
 listrow:not(:last-child) { /* Apply margin to all but the last listrow */
   margin-bottom: 20px;
 }
 
 /* Override hover effect for GtkListBoxRows to be fully transparent for all listrows */
-listrow:hover {
-  background-color: transparent; /* Remove background highlight */
-  border-color: transparent; /* Remove border highlight */
+listrow:hover,
+listrow:selected,
+listrow:focus {
+  background: none; /* Remove background highlight */
+  border: none; /* Remove border highlight */
   box-shadow: none; /* Remove shadow if any on hover */
 }
+
 
 .action-button {
   padding: 12px 24px; /* Add some padding */
@@ -27,6 +29,29 @@ listrow:hover {
 }
 
 .action-button:hover {
+  background-color: shade(@theme_accent_color, 0.9); /* Darken on hover */
+}
+
+/* Styles for tech tags */
+.pill {
+  background-color: @theme_accent_bg_color;
+  color: @theme_accent_color;
+  padding: 4px 8px;
+  border-radius: 16px; /* Highly rounded */
+  font-size: smaller;
+  font-weight: bold;
+}
+
+/* Styles for circular link buttons */
+.circular-button {
+  border-radius: 50%; /* Make it circular */
+  background-color: @theme_accent_color; /* Use primary color from Kotlin example */
+  min-width: 48px; /* Fixed size */
+  min-height: 48px; /* Fixed size */
+  padding: 0; /* Remove default padding */
+}
+
+.circular-button:hover {
   background-color: shade(@theme_accent_color, 0.9); /* Darken on hover */
 }
 

@@ -78,65 +78,143 @@ portfolio_project_card_init (PortfolioProjectCard *self)
 }
 
 PortfolioProjectCard *
+
 portfolio_project_card_new (const Project *project)
+
 {
+
   PortfolioProjectCard *self = g_object_new (PORTFOLIO_TYPE_PROJECT_CARD, NULL);
+
+  gchar *image_path;
+
+  gsize i;
+
+  GtkWidget *tech_label_box;
+
+  GtkWidget *tech_label;
+
+  GtkWidget *link_button;
+
+  const ProjectLink *link;
+
+  GtkWidget *icon_image;
+
+
 
   self->project = project;
 
+
+
   // Set project image
+
   if (project->image != NULL) {
-      gchar *image_path = g_strdup_printf("/org/alokparna/portfolio/gtk/%s.png", project->image); // Assuming .png for project images
+
+      image_path = g_strdup_printf("/org/alokparna/portfolio/gtk/%s", project->image); // Assuming .png for project images
+
       gtk_image_set_from_resource(self->project_image, image_path);
+
       g_free(image_path);
+
   }
+
+
 
   gtk_label_set_text (self->title_label, project->title);
+
   gtk_label_set_text (self->subtitle_label, project->subtitle);
+
   gtk_label_set_text (self->description_label, project->description);
 
+
+
   // Achievement
+
   if (project->achievement != NULL && strlen(project->achievement) > 0) {
+
       gtk_label_set_text (self->achievement_label, project->achievement);
+
       gtk_widget_set_visible(GTK_WIDGET(self->achievement_box), TRUE);
+
   } else {
+
       gtk_widget_set_visible(GTK_WIDGET(self->achievement_box), FALSE);
+
   }
+
+
 
   // Tech stack
+
   if (project->tech != NULL) {
-      for (gsize i = 0; i < project->n_tech; i++) {
-          GtkWidget *tech_label_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0); // Use GtkBox for padding/background
+
+      for (i = 0; i < project->n_tech; i++) {
+
+          tech_label_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0); // Use GtkBox for padding/background
+
           gtk_widget_add_css_class(tech_label_box, "pill"); // Using a "pill" class for tech labels
+
           
-          GtkWidget *tech_label = gtk_label_new(project->tech[i]);
+
+          tech_label = gtk_label_new(project->tech[i]);
+
           gtk_box_append(GTK_BOX(tech_label_box), tech_label);
+
           gtk_flow_box_append(self->tech_flowbox, tech_label_box);
+
       }
+
   }
+
+
 
   // Links
+
   if (project->links != NULL) {
-      for (gsize i = 0; i < project->n_links; i++) {
-          const ProjectLink *link = &project->links[i];
-          GtkWidget *link_button = gtk_button_new();
-          gtk_widget_set_tooltip_text(link_button, link->label);
+
+      for (i = 0; i < project->n_links; i++) {
+
+          link = &project->links[i];
+
+                    link_button = gtk_button_new();
+
+                    gtk_widget_add_css_class(link_button, "circular-button");
+
+                    gtk_widget_set_tooltip_text(link_button, link->label);
+
           
-          GtkWidget *icon_image = NULL;
+
+          icon_image = NULL;
+
           if (g_strcmp0(link->type, "demo") == 0) {
+
               icon_image = gtk_image_new_from_icon_name("go-next-symbolic"); // Equivalent to ArrowForward
+
           } else if (g_strcmp0(link->type, "drive") == 0) {
+
               icon_image = gtk_image_new_from_resource("/org/alokparna/portfolio/gtk/google_drive_logo.svg"); // Custom icon
+
           } else {
+
               icon_image = gtk_image_new_from_icon_name("dialog-information-symbolic"); // Equivalent to Info
+
           }
+
           gtk_image_set_pixel_size(GTK_IMAGE(icon_image), 24); // Size of 24.dp in Kotlin
+
           gtk_button_set_child(GTK_BUTTON(link_button), icon_image);
 
+
+
           g_signal_connect(link_button, "clicked", G_CALLBACK(on_link_button_clicked), (gpointer)link->url);
+
           gtk_box_append(self->links_box, link_button);
+
       }
+
   }
 
+
+
   return self;
+
 }

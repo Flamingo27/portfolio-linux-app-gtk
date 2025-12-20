@@ -92,6 +92,17 @@
                   </object>
                 </child>
 
+                <!-- Achievements -->
+                <child>
+                  <object class="AdwViewStackPage">
+                    <property name="title" translatable="yes">Achievements &amp; Recognition</property>
+                    <property name="icon-name">award-trophy-symbolic</property> <!-- Using a common symbolic icon -->
+                    <property name="child">
+                      <object class="PortfolioAchievementsPage" id="achievements_page"/>
+                    </property>
+                  </object>
+                </child>
+
                 <!-- Contact -->
                 <child>
                   <object class="AdwViewStackPage">

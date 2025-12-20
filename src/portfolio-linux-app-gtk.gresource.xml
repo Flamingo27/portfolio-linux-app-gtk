@@ -10,8 +10,10 @@
     <file preprocess="xml-stripblanks">portfolio-contact-page.ui</file>
     <file preprocess="xml-stripblanks">portfolio-experience-card.ui</file>
     <file preprocess="xml-stripblanks">portfolio-project-card.ui</file>
-    <file preprocess="xml-stripblanks">portfolio-skill-category-card.ui</file> <!-- Add this line -->
-    <file preprocess="xml-stripblanks">portfolio-additional-expertise-card.ui</file> <!-- Add this line -->
+    <file preprocess="xml-stripblanks">portfolio-skill-category-card.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-additional-expertise-card.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-achievement-card.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-achievements-page.ui</file>
     <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
     <file>style.css</file>
     <file>google_drive_logo.svg</file> <!-- Add this line -->
@@ -21,5 +23,13 @@
     <file>phone-icon.svg</file>
     <file>linkedin-icon.svg</file>
     <file>github-icon.svg</file>
+    <file>cura_horizon_logo.jpg</file>
+    <file>iete_logo.jpg</file>
+    <file>iic_logo.png</file>
+    <file>hero_background.jpg</file>
+    <file>project_assistive.jpeg</file>
+    <file>project_irrigation.jpg</file>
+    <file>project_stocks.jpg</file>
+    <file>project_unicred.jpg</file>
   </gresource>
 </gresources>
