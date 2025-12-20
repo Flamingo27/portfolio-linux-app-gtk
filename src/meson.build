@@ -8,6 +8,11 @@ portfolio_linux_app_gtk_sources = [
   'portfolio-projects-page.c',
   'portfolio-skills-page.c',
   'portfolio-contact-page.c',
+  'portfolio-experience-card.c',
+  'portfolio-project-card.c',
+  'portfolio-projects-page.c',
+  'portfolio-skill-category-card.c',
+  'portfolio-additional-expertise-card.c',
 ]
 
 portfolio_linux_app_gtk_deps = [

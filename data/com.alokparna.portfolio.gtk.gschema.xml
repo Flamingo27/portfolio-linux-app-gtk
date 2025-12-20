@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<schemalist gettext-domain="portfolio-linux-app-gtk">
-	<schema id="com.alokparna.portfolio.gtk" path="/com/alokparna/portfolio/gtk/">
-	</schema>
-</schemalist>

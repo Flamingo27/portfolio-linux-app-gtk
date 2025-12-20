@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+
+  <template class="PortfolioSkillCategoryCard" parent="AdwBin">
+    <style>
+      <class name="card"/>
+      <class name="non-interactive"/>
+    </style>
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <property name="spacing">16</property>
+        <property name="margin-top">20</property>
+        <property name="margin-bottom">20</property>
+        <property name="margin-start">20</property>
+        <property name="margin-end">20</property>
+
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">horizontal</property>
+            <property name="spacing">16</property>
+            <property name="valign">center</property>
+            <child>
+              <object class="GtkBox"> <!-- Box to apply background and rounded corners to icon -->
+                <property name="width-request">48</property>
+                <property name="height-request">48</property>
+                <property name="halign">center</property>
+                <property name="valign">center</property>
+                <style>
+                  <class name="skill-icon-background"/>
+                </style>
+                <child>
+                  <object class="GtkImage" id="icon_image">
+                    <property name="pixel-size">24</property>
+                  </object>
+                </child>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel" id="title_label">
+                <property name="xalign">0</property>
+                <property name="wrap">true</property>
+                <style>
+                  <class name="headline"/>
+                </style>
+              </object>
+            </child>
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox" id="skills_box">
+            <property name="orientation">vertical</property>
+            <property name="spacing">10</property>
+            <property name="margin-top">16</property>
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>

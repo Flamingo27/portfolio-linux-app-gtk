@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
-  <gresource prefix="/com/alokparna/portfolio/gtk">
+  <gresource prefix="/org/alokparna/portfolio/gtk">
     <file preprocess="xml-stripblanks">portfolio-linux-app-gtk-window.ui</file>
     <file preprocess="xml-stripblanks">portfolio-hero-page.ui</file>
     <file preprocess="xml-stripblanks">portfolio-about-page.ui</file>
@@ -8,7 +8,13 @@
     <file preprocess="xml-stripblanks">portfolio-projects-page.ui</file>
     <file preprocess="xml-stripblanks">portfolio-skills-page.ui</file>
     <file preprocess="xml-stripblanks">portfolio-contact-page.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-experience-card.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-project-card.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-skill-category-card.ui</file> <!-- Add this line -->
+    <file preprocess="xml-stripblanks">portfolio-additional-expertise-card.ui</file> <!-- Add this line -->
     <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
+    <file>style.css</file>
+    <file>google_drive_logo.svg</file> <!-- Add this line -->
     <file>alokparna_speaking.png</file>
     <file>mail-icon.svg</file>
     <file>location-icon.svg</file>

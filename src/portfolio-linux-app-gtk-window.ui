@@ -76,7 +76,7 @@
                     <property name="title" translatable="yes">Projects</property>
                     <property name="icon-name">applications-development-symbolic</property>
                     <property name="child">
-                      <object class="PortfolioProjectsPage"/>
+                      <object class="PortfolioProjectsPage" id="projects_page"/>
                     </property>
                   </object>
                 </child>
@@ -87,7 +87,7 @@
                     <property name="title" translatable="yes">Skills</property>
                     <property name="icon-name">starred-symbolic</property>
                     <property name="child">
-                      <object class="PortfolioSkillsPage"/>
+                      <object class="PortfolioSkillsPage" id="skills_page"/>
                     </property>
                   </object>
                 </child>

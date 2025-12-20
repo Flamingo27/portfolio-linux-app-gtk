@@ -1,3 +1,0 @@
-[D-BUS Service]
-Name=com.alokparna.portfolio.gtk
-Exec=@bindir@/portfolio-linux-app-gtk --gapplication-service

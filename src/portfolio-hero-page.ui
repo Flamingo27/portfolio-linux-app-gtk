@@ -3,178 +3,179 @@
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
 
-  <template class="PortfolioHeroPage" parent="AdwBin">
-    <property name="child">
-      <object class="AdwClampScrollable">
-        <property name="maximum-size">800</property>
-        <property name="tightening-threshold">600</property>
-        <property name="child">
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>
-            <property name="spacing">24</property>
-            <property name="margin-top">48</property>
-            <property name="margin-bottom">48</property>
-            <property name="margin-start">32</property>
-            <property name="margin-end">32</property>
-            <property name="halign">center</property>
-            <property name="valign">center</property>
-
-            <!-- Name -->
-            <child>
-              <object class="GtkLabel">
-                <property name="label">Alokparna Mitra</property>
-                <property name="wrap">True</property>
-                <property name="justify">center</property>
-                <style>
-                  <class name="title-1"/>
-                </style>
-              </object>
-            </child>
-
-            <!-- Title / Role -->
-            <child>
-              <object class="GtkLabel">
-                <property name="label">Full-Stack Developer</property>
-                <property name="wrap">True</property>
-                <property name="justify">center</property>
-                <style>
-                  <class name="title-2"/>
-                </style>
-              </object>
-            </child>
-
-            <!-- Description -->
-            <child>
-              <object class="GtkLabel">
-                <property name="label">Building innovative solutions at the intersection of AI, blockchain, and IoT. Passionate about creating impactful technology that solves real-world problems.</property>
-                <property name="wrap">True</property>
-                <property name="justify">center</property>
-                <property name="max-width-chars">60</property>
-                <style>
-                  <class name="body"/>
-                </style>
-              </object>
-            </child>
-
-            <!-- Action Buttons -->
-            <child>
-              <object class="GtkBox">
-                <property name="orientation">horizontal</property>
-                <property name="spacing">12</property>
-                <property name="halign">center</property>
-                <child>
-                  <object class="GtkButton" id="github_button">
-                    <signal name="clicked" handler="on_github_button_clicked"/>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="orientation">horizontal</property>
-                        <property name="spacing">6</property>
-                    <child>
-                      <object class="GtkImage">
-                        <property name="resource">/com/alokparna/portfolio/gtk/github-icon.svg</property>
-                        <property name="pixel-size">16</property>
-                      </object>
-                    </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="label">GitHub</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkButton" id="linkedin_button">
-                    <signal name="clicked" handler="on_linkedin_button_clicked"/>
-                    <child>
-                      <object class="GtkBox">
-                        <property name="orientation">horizontal</property>
-                        <property name="spacing">6</property>
-                        <child>
-                                                <object class="GtkImage">
-                                                  <property name="resource">/com/alokparna/portfolio/gtk/linkedin-icon.svg</property>
-                                                  <property name="pixel-size">16</property>
-                                                </object>                        </child>
-                        <child>
-                          <object class="GtkLabel">
-                            <property name="label">LinkedIn</property>
-                          </object>
-                        </child>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-
-            <!-- Contact Info -->
-            <child>
-              <object class="AdwPreferencesGroup">
-                <property name="margin-top">24</property>
-                <child>
-                  <object class="AdwActionRow" id="location_row">
-                    <property name="title">Kolkata, WB</property>
-                    <property name="subtitle">Location</property>
-                    <property name="activatable">True</property>
-                    <signal name="activated" handler="on_location_activated"/>
-                    <child type="prefix">
-                      <object class="GtkImage">
-                        <property name="resource">/com/alokparna/portfolio/gtk/location-icon.svg</property>
-                        <property name="pixel-size">24</property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="AdwActionRow" id="email_row">
-                    <property name="title">k.19.alokparnamitra@gmail.com</property>
-                    <property name="subtitle">Email</property>
-                    <property name="activatable">True</property>
-                    <signal name="activated" handler="on_email_activated"/>
-                    <child type="prefix">
-                      <object class="GtkImage">
-                        <property name="resource">/com/alokparna/portfolio/gtk/mail-icon.svg</property>
-                        <property name="pixel-size">24</property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-                <child>
-                  <object class="AdwActionRow" id="phone_row">
-                    <property name="title">+91 96473 25707</property>
-                    <property name="subtitle">Phone</property>
-                    <property name="activatable">True</property>
-                    <signal name="activated" handler="on_phone_activated"/>
-                    <child type="prefix">
-                      <object class="GtkImage">
-                        <property name="resource">/com/alokparna/portfolio/gtk/phone-icon.svg</property>
-                        <property name="pixel-size">24</property>
-                      </object>
-                    </child>
-                  </object>
-                </child>
-              </object>
-            </child>
-
-            <!-- View My Work Button -->
-            <child>
-              <object class="GtkButton" id="view_work_button">
-                <property name="label">View My Work</property>
-                <property name="icon-name">go-next-symbolic</property>
-                <signal name="clicked" handler="on_view_work_button_clicked" swapped="true"/>
-                <style>
-                  <class name="pill"/>
-                  <class name="suggested-action"/>
-                </style>
-              </object>
-            </child>
-
-          </object>
-        </property>
-      </object>
-    </property>
-  </template>
-</interface>
-
-
+    <template class="PortfolioHeroPage" parent="AdwBin">
+      <property name="child">
+            <object class="AdwClamp">
+              <property name="margin-top">48</property>
+              <property name="margin-bottom">48</property>
+              <property name="margin-start">32</property>
+              <property name="margin-end">32</property>
+              <property name="halign">center</property>
+              <property name="valign">center</property>
+  
+              <property name="child">
+                <object class="GtkBox">
+                  <property name="orientation">vertical</property>
+                  <property name="spacing">24</property>
+                  <!-- Name -->
+                  <child>
+                    <object class="GtkLabel">
+                      <property name="label">Alokparna Mitra</property>
+                      <property name="wrap">True</property>
+                      <property name="justify">center</property>
+                      <style>
+                        <class name="title-1"/>
+                      </style>
+                    </object>
+                  </child>
+      
+                  <!-- Title / Role -->
+                  <child>
+                    <object class="GtkLabel">
+                      <property name="label">Full-Stack Developer</property>
+                      <property name="wrap">True</property>
+                      <property name="justify">center</property>
+                      <style>
+                        <class name="title-2"/>
+                      </style>
+                    </object>
+                  </child>
+      
+                  <!-- Description -->
+                  <child>
+                    <object class="GtkLabel">
+                      <property name="label">Building innovative solutions at the intersection of AI, blockchain, and IoT. Passionate about creating impactful technology that solves real-world problems.</property>
+                      <property name="wrap">True</property>
+                      <property name="justify">center</property>
+                      <property name="max-width-chars">60</property>
+                      <style>
+                        <class name="body"/>
+                      </style>
+                    </object>
+                  </child>
+      
+                  <!-- Action Buttons -->
+                  <child>
+                    <object class="GtkBox">
+                      <property name="orientation">horizontal</property>
+                      <property name="spacing">12</property>
+                      <property name="halign">center</property>
+                      <child>
+                        <object class="GtkButton" id="github_button">
+                          <style>
+                            <class name="action-button"/>
+                          </style>
+                          <property name="child">
+                            <object class="GtkBox">
+                              <property name="orientation">horizontal</property>
+                              <property name="spacing">6</property>
+                          <child>
+                            <object class="GtkImage">
+                              <property name="resource">/org/alokparna/portfolio/gtk/github-icon.svg</property>
+                              <property name="pixel-size">16</property>
+                            </object>
+                          </child>
+                              <child>
+                                <object class="GtkLabel">
+                                  <property name="label">GitHub</property>
+                                </object>
+                              </child>
+                            </object>
+                          </property>
+                        </object>
+                      </child>
+                      <child>
+                        <object class="GtkButton" id="linkedin_button">
+                          <style>
+                            <class name="action-button"/>
+                          </style>
+                          <property name="child">
+                            <object class="GtkBox">
+                              <property name="orientation">horizontal</property>
+                              <property name="spacing">6</property>
+                              <child>
+                                                      <object class="GtkImage">
+                                                        <property name="resource">/org/alokparna/portfolio/gtk/linkedin-icon.svg</property>
+                                                        <property name="pixel-size">16</property>
+                                                      </object>
+                              </child>
+                              <child>
+                                <object class="GtkLabel">
+                                  <property name="label">LinkedIn</property>
+                                </object>
+                              </child>
+                            </object>
+                          </property>
+                        </object>
+                      </child>
+                    </object>
+                  </child>
+      
+                  <!-- Contact Info -->
+                  <child>
+                    <object class="AdwPreferencesGroup">
+                      <property name="margin-top">24</property>
+                      <child>
+                        <object class="AdwActionRow" id="location_row">
+                          <property name="title">Kolkata, WB</property>
+                          <property name="subtitle">Location</property>
+                          <property name="activatable">True</property>
+                          <signal name="activated" handler="on_location_activated"/>
+                          <child type="prefix">
+                            <object class="GtkImage">
+                              <property name="resource">/org/alokparna/portfolio/gtk/location-icon.svg</property>
+                              <property name="pixel-size">24</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+                      <child>
+                        <object class="AdwActionRow" id="email_row">
+                          <property name="title">k.19.alokparnamitra@gmail.com</property>
+                          <property name="subtitle">Email</property>
+                          <property name="activatable">True</property>
+                          <signal name="activated" handler="on_email_activated"/>
+                          <child type="prefix">
+                            <object class="GtkImage">
+                              <property name="resource">/org/alokparna/portfolio/gtk/mail-icon.svg</property>
+                              <property name="pixel-size">24</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+                      <child>
+                        <object class="AdwActionRow" id="phone_row">
+                          <property name="title">+91 96473 25707</property>
+                          <property name="subtitle">Phone</property>
+                          <property name="activatable">True</property>
+                          <signal name="activated" handler="on_phone_activated"/>
+                          <child type="prefix">
+                            <object class="GtkImage">
+                              <property name="resource">/org/alokparna/portfolio/gtk/phone-icon.svg</property>
+                              <property name="pixel-size">24</property>
+                            </object>
+                          </child>
+                        </object>
+                      </child>
+                    </object>
+                  </child>
+      
+                  <!-- View My Work Button -->
+                  <child>
+                    <object class="GtkButton" id="view_work_button">
+                      <property name="label">View My Work</property>
+                      <property name="icon-name">go-next-symbolic</property>
+                      <signal name="clicked" handler="on_view_work_button_clicked" swapped="true"/>
+                      <style>
+                        <class name="pill"/>
+                        <class name="suggested-action"/>
+                        <class name="action-button"/> <!-- Add this class -->
+                      </style>
+                    </object>
+                  </child>
+      
+                </object>
+              </property>
+            </object>
+      </property>
+    </template></interface>

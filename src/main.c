@@ -23,6 +23,7 @@
 #include <glib/gi18n.h>
 
 #include "portfolio-linux-app-gtk-application.h"
+#include <adwaita.h>
 
 int
 main (int   argc,
@@ -31,11 +32,13 @@ main (int   argc,
 	g_autoptr(PortfolioLinuxAppGtkApplication) app = NULL;
 	int ret;
 
+	adw_init ();
+
 	bindtextdomain (GETTEXT_PACKAGE, LOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
-	app = portfolio_linux_app_gtk_application_new ("com.alokparna.portfolio.gtk", G_APPLICATION_DEFAULT_FLAGS);
+	app = portfolio_linux_app_gtk_application_new ("org.alokparna.portfolio.gtk", G_APPLICATION_DEFAULT_FLAGS);
 	ret = g_application_run (G_APPLICATION (app), argc, argv);
 
 	return ret;

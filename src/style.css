@@ -1,0 +1,33 @@
+.card {
+  border-radius: 12px;
+  background-color: @theme_bg_color; /* Use theme background color */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Apply margin-bottom to GtkListBoxRows that contain an element with class 'card' */
+listrow:not(:last-child) { /* Apply margin to all but the last listrow */
+  margin-bottom: 20px;
+}
+
+/* Override hover effect for GtkListBoxRows to be fully transparent for all listrows */
+listrow:hover {
+  background-color: transparent; /* Remove background highlight */
+  border-color: transparent; /* Remove border highlight */
+  box-shadow: none; /* Remove shadow if any on hover */
+}
+
+.action-button {
+  padding: 12px 24px; /* Add some padding */
+  border-radius: 8px; /* Slightly rounded corners */
+  background-color: @theme_accent_color; /* Use accent color for background */
+  color: @theme_on_accent_color; /* Text color */
+  font-weight: bold; /* Make text bold */
+  min-width: 120px; /* Minimum width for buttons */
+  /* Removed: text-align: center; */
+}
+
+.action-button:hover {
+  background-color: shade(@theme_accent_color, 0.9); /* Darken on hover */
+}
+
+

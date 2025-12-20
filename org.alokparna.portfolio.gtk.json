@@ -27,9 +27,6 @@
             "name" : "portfolio-linux-app-gtk",
             "builddir" : true,
             "buildsystem" : "meson",
-            "config-opts" : [
-                "-Dprefix=/app"
-            ],
             "sources" : [
                 {
                     "type" : "git",

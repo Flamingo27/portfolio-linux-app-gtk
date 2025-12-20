@@ -16,7 +16,7 @@ portfolio_about_page_class_init (PortfolioAboutPageClass *klass)
 
   gtk_widget_class_set_template_from_resource (
     widget_class,
-    "/com/alokparna/portfolio/gtk/portfolio-about-page.ui"
+    "/org/alokparna/portfolio/gtk/portfolio-about-page.ui"
   );
 
   gtk_widget_class_bind_template_child (
@@ -35,7 +35,7 @@ portfolio_about_page_init (PortfolioAboutPage *self)
   gtk_widget_init_template (GTK_WIDGET (self));
 
   texture = gdk_texture_new_from_resource (
-    "/com/alokparna/portfolio/gtk/alokparna_speaking.png"
+    "/org/alokparna/portfolio/gtk/alokparna_speaking.png"
   );
 
   paintable = GDK_PAINTABLE (texture);

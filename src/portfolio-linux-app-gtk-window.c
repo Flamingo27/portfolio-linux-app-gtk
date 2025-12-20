@@ -27,6 +27,11 @@
 #include "portfolio-projects-page.h"
 #include "portfolio-skills-page.h"
 #include "portfolio-contact-page.h"
+#include "portfolio-project-card.h"
+#include "portfolio-skill-category-card.h" // Add this include
+#include "portfolio-additional-expertise-card.h" // Add this include
+#include <gtk/gtk.h>
+#include <adwaita.h>
 
 struct _PortfolioLinuxAppGtkWindow
 {
@@ -35,6 +40,8 @@ struct _PortfolioLinuxAppGtkWindow
 	/* Template widgets */
 	AdwViewStack *view_stack;
 	PortfolioHeroPage *hero_page;
+    PortfolioProjectsPage *projects_page;
+    PortfolioSkillsPage *skills_page; // Add this line
 };
 
 G_DEFINE_FINAL_TYPE (PortfolioLinuxAppGtkWindow, portfolio_linux_app_gtk_window, ADW_TYPE_APPLICATION_WINDOW)
@@ -63,10 +70,14 @@ portfolio_linux_app_gtk_window_class_init (PortfolioLinuxAppGtkWindowClass *klas
 	portfolio_projects_page_get_type ();
 	portfolio_skills_page_get_type ();
 	portfolio_contact_page_get_type ();
-
-	gtk_widget_class_set_template_from_resource (widget_class, "/com/alokparna/portfolio/gtk/portfolio-linux-app-gtk-window.ui");
+        portfolio_project_card_get_type(); // Register project card type as well
+        portfolio_skill_category_card_get_type(); // Register skill category card type
+        portfolio_additional_expertise_card_get_type(); // Register additional expertise card type
+    	gtk_widget_class_set_template_from_resource (widget_class, "/org/alokparna/portfolio/gtk/portfolio-linux-app-gtk-window.ui");
 	gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, view_stack);
 	gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, hero_page);
+    gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, projects_page);
+    gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, skills_page); // Add this line
 	gtk_widget_class_bind_template_callback (widget_class, on_hero_page_show_work);
 }
 
@@ -74,6 +85,14 @@ static void
 portfolio_linux_app_gtk_window_init (PortfolioLinuxAppGtkWindow *self)
 {
 	gtk_widget_init_template (GTK_WIDGET (self));
+
+	// Load CSS
+	GtkCssProvider *provider = gtk_css_provider_new ();
+	gtk_css_provider_load_from_resource (provider, "/org/alokparna/portfolio/gtk/style.css");
+	gtk_style_context_add_provider_for_display (gdk_display_get_default (),
+	                                            GTK_STYLE_PROVIDER (provider),
+	                                            GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
+	g_object_unref (provider);
 
 	g_signal_connect (self->hero_page, "show-work", G_CALLBACK (on_hero_page_show_work), self);
 }

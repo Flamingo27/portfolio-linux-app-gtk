@@ -5,36 +5,35 @@
 
   <template class="PortfolioExperiencePage" parent="AdwBin">
     <property name="child">
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
-        <property name="spacing">12</property>
+      <object class="AdwClamp">
         <property name="margin-top">24</property>
         <property name="margin-bottom">24</property>
         <property name="margin-start">24</property>
         <property name="margin-end">24</property>
 
-        <child>
-          <object class="GtkLabel">
-            <property name="label" translatable="yes">Experience</property>
-            <property name="wrap">True</property>
-            <property name="xalign">0</property>
-            <style>
-              <class name="title-2"/>
-            </style>
-          </object>
-        </child>
+        <property name="child">
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Experience</property>
+                <property name="wrap">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="title-2"/>
+                </style>
+              </object>
+            </child>
 
-        <child>
-          <object class="GtkLabel">
-            <property name="label" translatable="yes">Professional and personal projects across Android, web, and desktop, focusing on robust architecture and delightful UI.</property>
-            <property name="wrap">True</property>
-            <property name="xalign">0</property>
+            <child>
+              <object class="GtkListBox" id="experience_list_box">
+                <property name="selection-mode">none</property>
+              </object>
+            </child>
           </object>
-        </child>
+        </property>
       </object>
     </property>
   </template>
 </interface>
-
-
-

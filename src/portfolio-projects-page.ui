@@ -5,36 +5,53 @@
 
   <template class="PortfolioProjectsPage" parent="AdwBin">
     <property name="child">
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
-        <property name="spacing">12</property>
+      <object class="AdwClamp">
         <property name="margin-top">24</property>
         <property name="margin-bottom">24</property>
         <property name="margin-start">24</property>
         <property name="margin-end">24</property>
 
-        <child>
-          <object class="GtkLabel">
-            <property name="label" translatable="yes">Projects</property>
-            <property name="wrap">True</property>
-            <property name="xalign">0</property>
-            <style>
-              <class name="title-2"/>
-            </style>
+        <property name="child">
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">12</property>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Featured Projects</property>
+                <property name="wrap">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="title-2"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkLabel">
+                <property name="label" translatable="yes">Innovative solutions across blockchain, AI, and IoT</property>
+                <property name="wrap">True</property>
+                <property name="xalign">0</property>
+                <style>
+                  <class name="body"/>
+                </style>
+              </object>
+            </child>
+            <child>
+              <object class="GtkScrolledWindow">
+                <property name="hscrollbar-policy">never</property>
+                <property name="vscrollbar-policy">automatic</property>
+                <property name="min-content-height">200</property> <!-- Ensure it has a minimum height -->
+                <property name="vexpand">true</property>
+                <property name="child">
+                  <object class="GtkListBox" id="projects_list_box">
+                    <property name="selection-mode">none</property>
+                    <property name="margin-top">12</property>
+                  </object>
+                </property>
+              </object>
+            </child>
           </object>
-        </child>
-
-        <child>
-          <object class="GtkLabel">
-            <property name="label" translatable="yes">Includes a native Android portfolio app, a PWA, and this GTK/libadwaita desktop client.</property>
-            <property name="wrap">True</property>
-            <property name="xalign">0</property>
-          </object>
-        </child>
+        </property>
       </object>
     </property>
   </template>
 </interface>
-
-
-

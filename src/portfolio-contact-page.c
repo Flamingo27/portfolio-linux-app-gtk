@@ -19,7 +19,7 @@ portfolio_contact_page_class_init (PortfolioContactPageClass *klass)
 {
 	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
-	gtk_widget_class_set_template_from_resource (widget_class, "/com/alokparna/portfolio/gtk/portfolio-contact-page.ui");
+	gtk_widget_class_set_template_from_resource (widget_class, "/org/alokparna/portfolio/gtk/portfolio-contact-page.ui");
 }
 
 static void

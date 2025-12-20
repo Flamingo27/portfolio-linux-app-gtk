@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="Adw" version="1.0"/>
+
+  <template class="PortfolioProjectCard" parent="AdwBin">
+    <style>
+      <class name="card"/>
+    </style>
+    <property name="child">
+      <object class="GtkBox">
+        <property name="orientation">vertical</property>
+        <child>
+          <object class="GtkImage" id="project_image">
+            <property name="hexpand">true</property>
+            <property name="vexpand">true</property>
+            <property name="pixel-size">200</property> <!-- Corresponds to height(200.dp) in Kotlin -->
+          </object>
+        </child>
+
+        <child>
+          <object class="GtkBox">
+            <property name="orientation">vertical</property>
+            <property name="spacing">12</property>
+            <property name="margin-top">20</property>
+            <property name="margin-bottom">20</property>
+            <property name="margin-start">20</property>
+            <property name="margin-end">20</property>
+
+            <child>
+              <object class="GtkLabel" id="title_label">
+                <property name="xalign">0</property>
+                <property name="wrap">true</property>
+                <style>
+                  <class name="title-3"/>
+                </style>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkLabel" id="subtitle_label">
+                <property name="xalign">0</property>
+                <property name="wrap">true</property>
+                <style>
+                  <class name="caption"/>
+                  <class name="accent"/>
+                </style>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkLabel" id="description_label">
+                <property name="xalign">0</property>
+                <property name="wrap">true</property>
+                <style>
+                  <class name="body"/>
+                </style>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkBox" id="achievement_box">
+                <property name="orientation">horizontal</property>
+                <property name="spacing">8</property>
+                <property name="margin-top">16</property>
+                <style>
+                  <class name="card"/> <!-- Can reuse card style for achievement if needed -->
+                </style>
+                <child>
+                  <object class="GtkImage">
+                    <property name="icon-name">starred-symbolic</property>
+                    <property name="pixel-size">16</property>
+                  </object>
+                </child>
+                <child>
+                  <object class="GtkLabel" id="achievement_label">
+                    <property name="xalign">0</property>
+                    <property name="wrap">true</property>
+                    <style>
+                      <class name="body"/>
+                      <class name="dim-label"/>
+                    </style>
+                  </object>
+                </child>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkFlowBox" id="tech_flowbox">
+                <property name="valign">start</property>
+                <property name="min-children-per-line">1</property>
+                <property name="row-spacing">8</property>
+                <property name="column-spacing">8</property>
+                <property name="margin-top">16</property>
+              </object>
+            </child>
+
+            <child>
+              <object class="GtkBox" id="links_box">
+                <property name="orientation">horizontal</property>
+                <property name="spacing">8</property>
+                <property name="margin-top">16</property>
+              </object>
+            </child>
+
+          </object>
+        </child>
+      </object>
+    </property>
+  </template>
+</interface>
