@@ -1,92 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <requires lib="Adw" version="1.0"/>
+  <requires lib="libadwaita" version="1.0"/>
 
   <template class="PortfolioLinuxAppGtkWindow" parent="AdwApplicationWindow">
+    <property name="default-width">1100</property>
+    <property name="default-height">700</property>
     <property name="title">Alokparna Portfolio</property>
-    <property name="default-width">1000</property>
-    <property name="default-height">650</property>
 
     <property name="content">
-      <object class="AdwNavigationSplitView">
+      <object class="AdwToolbarView">
+        <property name="content">
+          <object class="GtkPaned">
+            <property name="orientation">horizontal</property>
 
-        <!-- ───────── LEFT SIDEBAR ───────── -->
-        <property name="sidebar">
-          <object class="AdwNavigationView">
-
+            <!-- ───────── SIDEBAR ───────── -->
             <child>
-              <object class="AdwNavigationPage">
-                <property name="title">Home</property>
+              <object class="GtkScrolledWindow">
+                <property name="width-request">260</property>
+                <property name="hscrollbar-policy">never</property>
+
                 <property name="child">
-                  <object class="PortfolioHeroPage"/>
+                  <object class="GtkListBox" id="nav_list">
+                    <property name="selection-mode">single</property>
+
+                    <!-- Home -->
+                    <child>
+                      <object class="GtkListBoxRow">
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Home</property>
+                            <property name="xalign">0</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <!-- About -->
+                    <child>
+                      <object class="GtkListBoxRow">
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">About</property>
+                            <property name="xalign">0</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <!-- Experience -->
+                    <child>
+                      <object class="GtkListBoxRow">
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Experience</property>
+                            <property name="xalign">0</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <!-- Projects -->
+                    <child>
+                      <object class="GtkListBoxRow">
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Projects</property>
+                            <property name="xalign">0</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <!-- Skills -->
+                    <child>
+                      <object class="GtkListBoxRow">
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Skills</property>
+                            <property name="xalign">0</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <!-- Achievements -->
+                    <child>
+                      <object class="GtkListBoxRow">
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Achievements</property>
+                            <property name="xalign">0</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                    <!-- Contact -->
+                    <child>
+                      <object class="GtkListBoxRow">
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Contact</property>
+                            <property name="xalign">0</property>
+                            <property name="margin-start">16</property>
+                            <property name="margin-top">12</property>
+                            <property name="margin-bottom">12</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+
+                  </object>
                 </property>
               </object>
             </child>
 
+            <!-- ───────── CONTENT ───────── -->
             <child>
-              <object class="AdwNavigationPage">
-                <property name="title">About</property>
-                <property name="child">
-                  <object class="PortfolioAboutPage"/>
-                </property>
-              </object>
-            </child>
+              <object class="AdwViewStack" id="view_stack">
+                <property name="hexpand">true</property>
+                <property name="vexpand">true</property>
 
-            <child>
-              <object class="AdwNavigationPage">
-                <property name="title">Experience</property>
-                <property name="child">
-                  <object class="PortfolioExperiencePage"/>
-                </property>
-              </object>
-            </child>
+                <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioHeroPage"/></property></object></child>
+                <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioAboutPage"/></property></object></child>
+                <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioExperiencePage"/></property></object></child>
+                <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioProjectsPage"/></property></object></child>
+                <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioSkillsPage"/></property></object></child>
+                <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioAchievementsPage"/></property></object></child>
+                <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioContactPage"/></property></object></child>
 
-            <child>
-              <object class="AdwNavigationPage">
-                <property name="title">Projects</property>
-                <property name="child">
-                  <object class="PortfolioProjectsPage"/>
-                </property>
-              </object>
-            </child>
-
-            <child>
-              <object class="AdwNavigationPage">
-                <property name="title">Skills</property>
-                <property name="child">
-                  <object class="PortfolioSkillsPage"/>
-                </property>
-              </object>
-            </child>
-
-            <child>
-              <object class="AdwNavigationPage">
-                <property name="title">Achievements</property>
-                <property name="child">
-                  <object class="PortfolioAchievementsPage"/>
-                </property>
-              </object>
-            </child>
-
-            <child>
-              <object class="AdwNavigationPage">
-                <property name="title">Contact</property>
-                <property name="child">
-                  <object class="PortfolioContactPage"/>
-                </property>
               </object>
             </child>
 
           </object>
         </property>
-
-        <!-- ───────── CONTENT AREA ───────── -->
-        <property name="content">
-          <object class="AdwNavigationView"/>
-        </property>
-
       </object>
     </property>
   </template>
 </interface>
+

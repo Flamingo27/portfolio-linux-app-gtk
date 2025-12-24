@@ -21,7 +21,7 @@
                 <property name="margin-start">16</property>
                 <property name="margin-end">16</property>
 
-                <!-- Header -->
+                <!-- ───────── HEADER ───────── -->
                 <child>
                   <object class="GtkBox">
                     <property name="orientation">vertical</property>
@@ -51,7 +51,7 @@
                   </object>
                 </child>
 
-                <!-- Contact Information -->
+                <!-- ───────── CONTACT INFO ───────── -->
                 <child>
                   <object class="AdwPreferencesGroup">
                     <property name="title">Contact Information</property>
@@ -88,7 +88,7 @@
                   </object>
                 </child>
 
-                <!-- Connect Online -->
+                <!-- ───────── CONNECT ONLINE ───────── -->
                 <child>
                   <object class="AdwPreferencesGroup">
                     <property name="title">Connect Online</property>
@@ -115,7 +115,7 @@
                   </object>
                 </child>
 
-                <!-- Send Message -->
+                <!-- ───────── SEND MESSAGE ───────── -->
                 <child>
                   <object class="AdwPreferencesGroup">
                     <property name="title">Send a Message</property>
@@ -154,18 +154,45 @@
                   </object>
                 </child>
 
-                <!-- Send Button -->
+                <!-- ───────── SEND BUTTON + SPINNER ───────── -->
                 <child>
-                  <object class="GtkButton" id="send_button">
-                    <property name="sensitive">false</property>
-                    <signal name="clicked" handler="on_send_clicked"/>
-                    <style>
-                      <class name="suggested-action"/>
-                      <class name="pill"/>
-                    </style>
+                  <object class="GtkBox">
+                    <property name="spacing">8</property>
+                    <property name="halign">center</property>
+
                     <child>
-                      <object class="GtkLabel">
-                        <property name="label">Send Message</property>
+                      <object class="GtkSpinner" id="spinner">
+                        <property name="visible">false</property>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkButton" id="send_button">
+                        <property name="sensitive">false</property>
+                        <signal name="clicked" handler="on_send_clicked"/>
+                        <style>
+                          <class name="suggested-action"/>
+                          <class name="pill"/>
+                        </style>
+                        <child>
+                          <object class="GtkLabel">
+                            <property name="label">Send Message</property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- ───────── STATUS MESSAGE ───────── -->
+                <child>
+                  <object class="GtkRevealer" id="status_revealer">
+                    <property name="reveal-child">false</property>
+                    <property name="transition-type">slide-down</property>
+                    <child>
+                      <object class="GtkLabel" id="status_label">
+                        <property name="wrap">true</property>
+                        <property name="halign">center</property>
                       </object>
                     </child>
                   </object>
