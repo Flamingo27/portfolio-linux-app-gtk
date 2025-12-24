@@ -9,6 +9,7 @@ gnome = import('gnome')
 cc = meson.get_compiler('c')
 
 adw_dep = dependency('libadwaita-1')
+json_dep = dependency('json-glib-1.0')
 soup_dep = dependency('libsoup-3.0')
 
 config_h = configuration_data()

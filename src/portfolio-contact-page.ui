@@ -1,97 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <requires lib="Adw" version="1.0"/>
+  <requires lib="libadwaita" version="1.0"/>
 
   <template class="PortfolioContactPage" parent="AdwBin">
     <property name="child">
-      <object class="AdwClamp">
-        <property name="margin-top">24</property>
-        <property name="margin-bottom">24</property>
-        <property name="margin-start">24</property>
-        <property name="margin-end">24</property>
+      <object class="GtkScrolledWindow">
+        <property name="hscrollbar-policy">never</property>
 
         <property name="child">
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>
-            <property name="spacing">12</property>
-            <child>
-              <object class="GtkLabel">
-                <property name="label" translatable="yes">Get in touch</property>
-                <property name="wrap">True</property>
-                <property name="xalign">0</property>
-                <style>
-                  <class name="title-2"/>
-                </style>
-              </object>
-            </child>
+          <object class="AdwClamp">
+            <property name="maximum-size">760</property>
 
-            <child>
-              <object class="GtkLabel" id="info_label">
-                <property name="label" translatable="yes">Let's discuss your next project or opportunity</property>
-                <property name="wrap">True</property>
-                <property name="xalign">0</property>
-              </object>
-            </child>
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">36</property>
+                <property name="margin-top">32</property>
+                <property name="margin-bottom">32</property>
+                <property name="margin-start">16</property>
+                <property name="margin-end">16</property>
 
-            <child>
-              <object class="AdwPreferencesGroup">
+                <!-- Header -->
                 <child>
-                  <object class="AdwEntryRow" id="name_row">
-                    <property name="title" translatable="yes">Name</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="AdwEntryRow" id="email_row">
-                    <property name="title" translatable="yes">Email</property>
-                  </object>
-                </child>
-                <child>
-                  <object class="AdwExpanderRow" id="message_row">
-                    <property name="title" translatable="yes">Message</property>
-                    <property name="enable-expansion">False</property>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">8</property>
+                    <property name="halign">center</property>
+
                     <child>
-                      <object class="GtkTextView" id="message_view">
-                        <property name="wrap-mode">word</property>
-                        <property name="top-margin">12</property>
-                        <property name="bottom-margin">12</property>
-                        <property name="left-margin">12</property>
-                        <property name="right-margin">12</property>
+                      <object class="GtkLabel">
+                        <property name="label">Get In Touch</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                          <attribute name="scale" value="2.4"/>
+                        </attributes>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">
+                          Let's discuss your next project or opportunity
+                        </property>
+                        <style>
+                          <class name="caption"/>
+                        </style>
                       </object>
                     </child>
                   </object>
                 </child>
-              </object>
-            </child>
 
-            <child>
-              <object class="GtkBox">
-                <property name="orientation">horizontal</property>
-                <property name="halign">center</property>
-                <property name="spacing">12</property>
+                <!-- Contact Information -->
                 <child>
-                    <object class="GtkButton" id="send_button">
-                    <property name="label" translatable="yes">Send Message</property>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title">Contact Information</property>
+
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title">Email</property>
+                        <property name="subtitle">k.19.alokparnamitra@gmail.com</property>
+                        <property name="icon-name">mail-symbolic</property>
+                        <property name="activatable">true</property>
+                        <signal name="activated" handler="on_open_email"/>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title">Phone</property>
+                        <property name="subtitle">+91 96473 25707</property>
+                        <property name="icon-name">call-symbolic</property>
+                        <property name="activatable">true</property>
+                        <signal name="activated" handler="on_open_phone"/>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title">Location</property>
+                        <property name="subtitle">Kolkata, West Bengal, India</property>
+                        <property name="icon-name">location-symbolic</property>
+                        <property name="activatable">true</property>
+                        <signal name="activated" handler="on_open_location"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Connect Online -->
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title">Connect Online</property>
+
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title">GitHub</property>
+                        <property name="subtitle">Flamingo27</property>
+                        <property name="icon-name">github-symbolic</property>
+                        <property name="activatable">true</property>
+                        <signal name="activated" handler="on_open_github"/>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="AdwActionRow">
+                        <property name="title">LinkedIn</property>
+                        <property name="subtitle">alokparna-mitra</property>
+                        <property name="icon-name">linkedin-symbolic</property>
+                        <property name="activatable">true</property>
+                        <signal name="activated" handler="on_open_linkedin"/>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Send Message -->
+                <child>
+                  <object class="AdwPreferencesGroup">
+                    <property name="title">Send a Message</property>
+
+                    <child>
+                      <object class="AdwEntryRow" id="name_entry">
+                        <property name="title">Name</property>
+                        <signal name="changed" handler="on_changed"/>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="AdwEntryRow" id="email_entry">
+                        <property name="title">Email</property>
+                        <property name="input-purpose">email</property>
+                        <signal name="changed" handler="on_changed"/>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="AdwExpanderRow">
+                        <property name="title">Message</property>
+                        <child>
+                          <object class="GtkTextView" id="message_view">
+                            <property name="wrap-mode">word-char</property>
+                            <property name="height-request">120</property>
+                            <property name="buffer">
+                              <object class="GtkTextBuffer">
+                                <signal name="changed" handler="on_changed"/>
+                              </object>
+                            </property>
+                          </object>
+                        </child>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- Send Button -->
+                <child>
+                  <object class="GtkButton" id="send_button">
+                    <property name="sensitive">false</property>
+                    <signal name="clicked" handler="on_send_clicked"/>
                     <style>
-                        <class name="pill"/>
-                        <class name="suggested-action"/>
+                      <class name="suggested-action"/>
+                      <class name="pill"/>
                     </style>
-                    </object>
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Send Message</property>
+                      </object>
+                    </child>
+                  </object>
                 </child>
-                <child>
-                    <object class="GtkSpinner" id="spinner">
-                        <property name="spinning">False</property>
-                        <property name="visible">False</property>
-                    </object>
-                </child>
+
               </object>
-            </child>
-            <child>
-              <object class="GtkLabel" id="status_label">
-                <property name="wrap">True</property>
-                <property name="xalign">0.5</property>
-              </object>
-            </child>
+            </property>
           </object>
         </property>
       </object>

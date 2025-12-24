@@ -2,137 +2,91 @@
 <interface>
   <requires lib="gtk" version="4.0"/>
   <requires lib="Adw" version="1.0"/>
+
   <template class="PortfolioLinuxAppGtkWindow" parent="AdwApplicationWindow">
-    <property name="title" translatable="yes">Alokparna Portfolio</property>
-    <property name="default-width">800</property>
-    <property name="default-height">600</property>
+    <property name="title">Alokparna Portfolio</property>
+    <property name="default-width">1000</property>
+    <property name="default-height">650</property>
+
     <property name="content">
-      <object class="AdwToolbarView">
-        <child type="top">
-          <object class="AdwHeaderBar">
-            <property name="show-end-title-buttons">True</property>
-            <property name="show-start-title-buttons">True</property>
-            <property name="title-widget">
-              <object class="AdwViewSwitcherTitle">
-                <property name="stack">view_stack</property>
-              </object>
-            </property>
-            <child type="end">
-              <object class="GtkMenuButton">
-                <property name="primary">True</property>
-                <property name="icon-name">open-menu-symbolic</property>
-                <property name="tooltip-text" translatable="yes">Main Menu</property>
-                <property name="menu-model">primary_menu</property>
+      <object class="AdwNavigationSplitView">
+
+        <!-- ───────── LEFT SIDEBAR ───────── -->
+        <property name="sidebar">
+          <object class="AdwNavigationView">
+
+            <child>
+              <object class="AdwNavigationPage">
+                <property name="title">Home</property>
+                <property name="child">
+                  <object class="PortfolioHeroPage"/>
+                </property>
               </object>
             </child>
-          </object>
-        </child>
-        <child type="bottom">
-          <object class="AdwViewSwitcherBar">
-            <property name="stack">view_stack</property>
-          </object>
-        </child>
-        <property name="content">
-          <object class="AdwViewStack" id="view_stack">
-            <property name="vexpand">True</property>
 
-                <!-- Hero / Welcome -->
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="title" translatable="yes">Hero</property>
-                    <property name="icon-name">emblem-favorite-symbolic</property>
-                    <property name="child">
-                      <object class="PortfolioHeroPage" id="hero_page"/>
-                    </property>
-                  </object>
-                </child>
-
-                <!-- About -->
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="name">about</property>
-                    <property name="title" translatable="yes">About</property>
-                    <property name="icon-name">avatar-default-symbolic</property>
-                    <property name="child">
-                      <object class="PortfolioAboutPage"/>
-                    </property>
-                  </object>
-                </child>
-
-                <!-- Experience -->
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="title" translatable="yes">Experience</property>
-                    <property name="icon-name">emblem-system-symbolic</property>
-                    <property name="child">
-                      <object class="PortfolioExperiencePage"/>
-                    </property>
-                  </object>
-                </child>
-
-                <!-- Projects -->
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="title" translatable="yes">Projects</property>
-                    <property name="icon-name">applications-development-symbolic</property>
-                    <property name="child">
-                      <object class="PortfolioProjectsPage" id="projects_page"/>
-                    </property>
-                  </object>
-                </child>
-
-                <!-- Skills -->
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="title" translatable="yes">Skills</property>
-                    <property name="icon-name">starred-symbolic</property>
-                    <property name="child">
-                      <object class="PortfolioSkillsPage" id="skills_page"/>
-                    </property>
-                  </object>
-                </child>
-
-                <!-- Achievements -->
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="title" translatable="yes">Achievements &amp; Recognition</property>
-                    <property name="icon-name">award-trophy-symbolic</property> <!-- Using a common symbolic icon -->
-                    <property name="child">
-                      <object class="PortfolioAchievementsPage" id="achievements_page"/>
-                    </property>
-                  </object>
-                </child>
-
-                <!-- Contact -->
-                <child>
-                  <object class="AdwViewStackPage">
-                    <property name="title" translatable="yes">Contact</property>
-                    <property name="icon-name">mail-send-symbolic</property>
-                    <property name="child">
-                      <object class="PortfolioContactPage"/>
-                    </property>
-                  </object>
-                </child>
-
+            <child>
+              <object class="AdwNavigationPage">
+                <property name="title">About</property>
+                <property name="child">
+                  <object class="PortfolioAboutPage"/>
+                </property>
               </object>
+            </child>
+
+            <child>
+              <object class="AdwNavigationPage">
+                <property name="title">Experience</property>
+                <property name="child">
+                  <object class="PortfolioExperiencePage"/>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwNavigationPage">
+                <property name="title">Projects</property>
+                <property name="child">
+                  <object class="PortfolioProjectsPage"/>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwNavigationPage">
+                <property name="title">Skills</property>
+                <property name="child">
+                  <object class="PortfolioSkillsPage"/>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwNavigationPage">
+                <property name="title">Achievements</property>
+                <property name="child">
+                  <object class="PortfolioAchievementsPage"/>
+                </property>
+              </object>
+            </child>
+
+            <child>
+              <object class="AdwNavigationPage">
+                <property name="title">Contact</property>
+                <property name="child">
+                  <object class="PortfolioContactPage"/>
+                </property>
+              </object>
+            </child>
+
+          </object>
         </property>
+
+        <!-- ───────── CONTENT AREA ───────── -->
+        <property name="content">
+          <object class="AdwNavigationView"/>
+        </property>
+
       </object>
     </property>
   </template>
-  <menu id="primary_menu">
-    <section>
-      <item>
-        <attribute name="label" translatable="yes">_Preferences</attribute>
-        <attribute name="action">app.preferences</attribute>
-      </item>
-      <item>
-        <attribute name="label" translatable="yes">_Keyboard Shortcuts</attribute>
-        <attribute name="action">app.shortcuts</attribute>
-      </item>
-      <item>
-        <attribute name="label" translatable="yes">_About Portfolio-linux-app-gtk</attribute>
-        <attribute name="action">app.about</attribute>
-      </item>
-    </section>
-  </menu>
 </interface>
