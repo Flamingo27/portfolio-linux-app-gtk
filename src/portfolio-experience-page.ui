@@ -31,10 +31,6 @@
                 <child>
                   <object class="GtkListBox" id="experience_list_box">
                     <property name="selection-mode">none</property>
-                    <property name="css-classes">
-                      <nth-child-even value="false"/>
-                      <nth-child-odd value="false"/>
-                    </property>
                   </object>
                 </child>
               </object>

@@ -20,6 +20,7 @@ portfolio_linux_app_gtk_sources = [
 portfolio_linux_app_gtk_deps = [
   dependency('gtk4'),
   dependency('libadwaita-1', version: '>= 1.4'),
+  dependency('libsoup-3.0'),
 ]
 
 portfolio_linux_app_gtk_sources += gnome.compile_resources('portfolio-linux-app-gtk-resources',

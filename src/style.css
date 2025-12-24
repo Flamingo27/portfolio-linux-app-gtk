@@ -1,7 +1,9 @@
+
 .card {
   border-radius: 12px;
   background-color: @theme_bg_color; /* Use theme background color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-bottom: 12px;
 }
 
 listrow:not(:last-child) { /* Apply margin to all but the last listrow */

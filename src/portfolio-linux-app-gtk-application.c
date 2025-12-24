@@ -1,25 +1,6 @@
-/* portfolio-linux-app-gtk-application.c
- *
- * Copyright 2025 Unknown
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <https://www.gnu.org/licenses/>.
- *
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-
 #include "config.h"
 #include <glib/gi18n.h>
+#include <adwaita.h>
 
 #include "portfolio-linux-app-gtk-application.h"
 #include "portfolio-linux-app-gtk-window.h"
@@ -113,6 +94,8 @@ static const GActionEntry app_actions[] = {
 static void
 portfolio_linux_app_gtk_application_init (PortfolioLinuxAppGtkApplication *self)
 {
+    AdwStyleManager *style_manager;
+
 	g_action_map_add_action_entries (G_ACTION_MAP (self),
 	                                 app_actions,
 	                                 G_N_ELEMENTS (app_actions),
@@ -120,4 +103,7 @@ portfolio_linux_app_gtk_application_init (PortfolioLinuxAppGtkApplication *self)
 	gtk_application_set_accels_for_action (GTK_APPLICATION (self),
 	                                       "app.quit",
 	                                       (const char *[]) { "<control>q", NULL });
+
+    style_manager = adw_style_manager_get_default ();
+    adw_style_manager_set_color_scheme (style_manager, ADW_COLOR_SCHEME_PREFER_DARK);
 }

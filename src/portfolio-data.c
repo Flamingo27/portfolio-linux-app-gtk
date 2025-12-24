@@ -41,7 +41,7 @@ static const gchar *iete_highlights[] = {
 };
 
 
-const Experience experiences[] = {
+Experience experiences[] = {
   {
     .role = "Co-Founder",
     .company = "Cura Horizon",
@@ -118,7 +118,7 @@ const Project projects[] = {
     .achievement = "Top 5 Finalist at GDG HackBuild, VIT Mumbai",
     .links = unicred_links,
     .n_links = num_unicred_links,
-    .image = "project_unicred.png",
+    .image = "project_unicred.jpg",
   },
   {
     .title = "Smart Irrigation System",

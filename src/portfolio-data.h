@@ -62,7 +62,7 @@ struct _Achievement
 };
 
 // Extern declarations for the data arrays and functions
-extern const Experience experiences[];
+extern Experience experiences[];
 extern const gsize num_experiences;
 
 extern const Project projects[];
