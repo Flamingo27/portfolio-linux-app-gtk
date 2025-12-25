@@ -12,7 +12,7 @@
     <file preprocess="xml-stripblanks">portfolio-project-card.ui</file>
     <file preprocess="xml-stripblanks">portfolio-skill-category-card.ui</file>
     <file preprocess="xml-stripblanks">portfolio-additional-expertise-card.ui</file>
-    <file preprocess="xml-stripblanks">portfolio-achievement-card.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-achievement-row.ui</file>
     <file preprocess="xml-stripblanks">portfolio-achievements-page.ui</file>
     <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
     <file>style.css</file>

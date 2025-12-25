@@ -211,6 +211,32 @@ const gsize num_skill_categories = G_N_ELEMENTS(skill_categories);
 const gchar *interests_data[] = {"Full-Stack Development", "UI/UX", "Open-source Contributions", NULL};
 const gsize num_interests = G_N_ELEMENTS(interests_data) - 1;
 
+/* Achievements Data */
+const Achievement achievements[] = {
+    {
+        .title = "Top 5 Finalist",
+        .event = "GDG HackBuild",
+        .description = "UNICRED project recognized among top finalists at VIT Mumbai hackathon",
+        .icon = "Trophy",
+        .color = {"#FBBF24", "#F59E0B"}
+    },
+    {
+        .title = "Winner",
+        .event = "Eureka Startup Pitch",
+        .description = "Cura Horizon won first place in competitive startup pitch competition",
+        .icon = "Award",
+        .color = {"#06B6D4", "#3B82F6"}
+    },
+    {
+        .title = "Winner",
+        .event = "IEMHEALS 2024",
+        .description = "Selected among 289 international teams for healthcare innovation",
+        .icon = "Star",
+        .color = {"#3B82F6", "#06B6D4"}
+    }
+};
+
+const gsize num_achievements = G_N_ELEMENTS(achievements);
 
 // Function to initialize all data (especially hash tables)
 void

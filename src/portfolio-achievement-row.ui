@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+
+  <template class="PortfolioAchievementRow" parent="AdwActionRow">
+    <property name="activatable">false</property>
+
+    <child type="prefix">
+      <object class="GtkImage">
+        <property name="icon-name">trophy-symbolic</property>
+      </object>
+    </child>
+  </template>
+</interface>

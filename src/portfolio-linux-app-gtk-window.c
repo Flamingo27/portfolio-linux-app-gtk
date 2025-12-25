@@ -13,6 +13,7 @@
 #include "portfolio-skills-page.h"
 #include "portfolio-achievements-page.h"
 #include "portfolio-contact-page.h"
+#include "portfolio-achievement-row.h"   /* 🔴 REQUIRED */
 
 #include <gtk/gtk.h>
 #include <adwaita.h>
@@ -73,7 +74,7 @@ portfolio_linux_app_gtk_window_class_init (PortfolioLinuxAppGtkWindowClass *klas
 {
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
-  /* Register ALL custom widgets before template */
+  /* 🔴 Register ALL custom widgets BEFORE template load */
   portfolio_hero_page_get_type ();
   portfolio_about_page_get_type ();
   portfolio_experience_page_get_type ();
@@ -81,6 +82,9 @@ portfolio_linux_app_gtk_window_class_init (PortfolioLinuxAppGtkWindowClass *klas
   portfolio_skills_page_get_type ();
   portfolio_achievements_page_get_type ();
   portfolio_contact_page_get_type ();
+
+  /* 🔴 THIS WAS THE CRITICAL MISSING PIECE */
+  portfolio_achievement_row_get_type ();
 
   gtk_widget_class_set_template_from_resource (
     widget_class,
@@ -131,4 +135,3 @@ portfolio_linux_app_gtk_window_init (PortfolioLinuxAppGtkWindow *self)
 
   g_object_unref (provider);
 }
-

@@ -1,4 +1,3 @@
-
 .card {
   border-radius: 12px;
   background-color: @theme_bg_color; /* Use theme background color */
@@ -10,14 +9,7 @@ listrow:not(:last-child) { /* Apply margin to all but the last listrow */
   margin-bottom: 20px;
 }
 
-/* Override hover effect for GtkListBoxRows to be fully transparent for all listrows */
-listrow:hover,
-listrow:selected,
-listrow:focus {
-  background: none; /* Remove background highlight */
-  border: none; /* Remove border highlight */
-  box-shadow: none; /* Remove shadow if any on hover */
-}
+
 
 
 .action-button {
@@ -55,6 +47,68 @@ listrow:focus {
 
 .circular-button:hover {
   background-color: shade(@theme_accent_color, 0.9); /* Darken on hover */
+}
+
+/* Sidebar row styles */
+.sidebar-row {
+  background-color: transparent;
+  border-radius: 8px;
+  padding: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar-row:selected,
+.sidebar-row:hover {
+  background-color: @theme_accent_color;
+  color: @theme_on_accent_color;
+}
+
+.sidebar-row GtkLabel {
+  font-weight: bold;
+}
+
+.sidebar-row GtkImage {
+  color: @theme_on_accent_color;
+}
+
+/* Universal styling for all pages */
+.page-container {
+  margin: 32px 16px;
+  padding: 16px;
+  border-radius: 12px;
+  background-color: @theme_bg_color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-header {
+  font-weight: bold;
+  font-size: 1.8em;
+  margin-bottom: 16px;
+}
+
+.page-subheader {
+  font-size: 1.2em;
+  color: @theme_fg_color;
+  margin-bottom: 24px;
+}
+
+.page-content {
+}
+
+.page-action-row {
+}
+
+.page-action-button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: @theme_accent_color;
+  color: @theme_on_accent_color;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.page-action-button:hover {
+  background-color: shade(@theme_accent_color, 0.9);
 }
 
 

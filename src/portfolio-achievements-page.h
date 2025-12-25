@@ -4,10 +4,15 @@
 
 G_BEGIN_DECLS
 
-#define PORTFOLIO_TYPE_ACHIEVEMENTS_PAGE (portfolio_achievements_page_get_type ())
-G_DECLARE_FINAL_TYPE (PortfolioAchievementsPage, portfolio_achievements_page, PORTFOLIO, ACHIEVEMENTS_PAGE, AdwBin)
+#define PORTFOLIO_TYPE_ACHIEVEMENTS_PAGE \
+  (portfolio_achievements_page_get_type())
 
-PortfolioAchievementsPage *
-portfolio_achievements_page_new (void);
+G_DECLARE_FINAL_TYPE (
+  PortfolioAchievementsPage,
+  portfolio_achievements_page,
+  PORTFOLIO,
+  ACHIEVEMENTS_PAGE,
+  AdwBin
+)
 
 G_END_DECLS

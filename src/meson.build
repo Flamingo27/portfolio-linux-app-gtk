@@ -12,7 +12,7 @@ portfolio_linux_app_gtk_sources = [
   'portfolio-project-card.c',
   'portfolio-skill-category-card.c',
   'portfolio-additional-expertise-card.c',
-  'portfolio-achievement-card.c',
+  'portfolio-achievement-row.c',
   'portfolio-achievements-page.c',
   'portfolio-data.c',
 ]

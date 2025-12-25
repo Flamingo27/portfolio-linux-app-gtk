@@ -105,5 +105,5 @@ portfolio_linux_app_gtk_application_init (PortfolioLinuxAppGtkApplication *self)
 	                                       (const char *[]) { "<control>q", NULL });
 
     style_manager = adw_style_manager_get_default ();
-    adw_style_manager_set_color_scheme (style_manager, ADW_COLOR_SCHEME_PREFER_DARK);
+    adw_style_manager_set_color_scheme (style_manager, ADW_COLOR_SCHEME_DEFAULT);
 }
