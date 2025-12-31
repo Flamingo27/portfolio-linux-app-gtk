@@ -9,154 +9,93 @@
     <property name="default-height">720</property>
 
     <property name="content">
-      <object class="AdwNavigationView" id="nav_view">
+      <object class="GtkOverlay">
 
-        <!-- ───────── HERO PAGE (NO SIDEBAR) ───────── -->
+        <!-- ================= MAIN NAVIGATION ================= -->
         <child>
-          <object class="AdwNavigationPage" id="hero_page">
-            <property name="can-pop">false</property>
-            <property name="child">
-              <object class="PortfolioHeroPage"/>
-            </property>
-          </object>
-        </child>
+          <object class="AdwNavigationView" id="nav_view">
 
-        <!-- ───────── MAIN APP (ADAPTIVE SIDEBAR) ───────── -->
-        <child>
-          <object class="AdwNavigationPage" id="main_page">
-            <property name="child">
+            <!-- HERO PAGE -->
+            <child>
+              <object class="AdwNavigationPage" id="hero_page">
+                <property name="can-pop">false</property>
+                <property name="child">
+                  <object class="PortfolioHeroPage"/>
+                </property>
+              </object>
+            </child>
 
-              <object class="AdwNavigationSplitView">
+            <!-- MAIN PAGE -->
+            <child>
+              <object class="AdwNavigationPage" id="main_page">
+                <property name="child">
+                  <object class="AdwNavigationSplitView">
 
-                <!-- SIDEBAR -->
-                <property name="sidebar">
-                  <object class="AdwNavigationPage">
-                    <property name="title">Sidebar</property>
-
-                    <property name="child">
-                      <object class="GtkScrolledWindow">
-                        <property name="hscrollbar-policy">never</property>
-
+                    <!-- SIDEBAR -->
+                    <property name="sidebar">
+                      <object class="AdwNavigationPage">
                         <property name="child">
-                          <object class="GtkListBox" id="nav_list">
-                            <property name="selection-mode">single</property>
-                            <style>
-                              <class name="navigation-sidebar"/>
-                            </style>
+                          <object class="GtkScrolledWindow">
+                            <property name="hscrollbar-policy">never</property>
 
-                            <child>
-                              <object class="GtkListBoxRow">
-                                <property name="activatable">true</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">About</property>
-                                    <property name="xalign">0</property>
-                                    <property name="margin-start">16</property>
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
+                            <property name="child">
+                              <object class="GtkListBox" id="nav_list">
+                                <property name="selection-mode">single</property>
+                                <style>
+                                  <class name="navigation-sidebar"/>
+                                </style>
 
-                            <child>
-                              <object class="GtkListBoxRow">
-                                <property name="activatable">true</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Experience</property>
-                                    <property name="xalign">0</property>
-                                    <property name="margin-start">16</property>
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkListBoxRow">
-                                <property name="activatable">true</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Projects</property>
-                                    <property name="xalign">0</property>
-                                    <property name="margin-start">16</property>
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkListBoxRow">
-                                <property name="activatable">true</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Skills</property>
-                                    <property name="xalign">0</property>
-                                    <property name="margin-start">16</property>
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkListBoxRow">
-                                <property name="activatable">true</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Achievements</property>
-                                    <property name="xalign">0</property>
-                                    <property name="margin-start">16</property>
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                            <child>
-                              <object class="GtkListBoxRow">
-                                <property name="activatable">true</property>
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Contact</property>
-                                    <property name="xalign">0</property>
-                                    <property name="margin-start">16</property>
-                                    <property name="margin-top">12</property>
-                                    <property name="margin-bottom">12</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">About</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Experience</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Projects</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Skills</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Achievements</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Contact</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
+                              </object>
+                            </property>
                           </object>
                         </property>
                       </object>
                     </property>
-                  </object>
-                </property>
 
-                <!-- CONTENT -->
-                <property name="content">
-                  <object class="AdwNavigationPage">
-                    <property name="title">Content</property>
-
-                    <property name="child">
-                      <object class="AdwViewStack" id="view_stack">
-                        <child><object class="PortfolioAboutPage"/></child>
-                        <child><object class="PortfolioExperiencePage"/></child>
-                        <child><object class="PortfolioProjectsPage"/></child>
-                        <child><object class="PortfolioSkillsPage"/></child>
-                        <child><object class="PortfolioAchievementsPage"/></child>
-                        <child><object class="PortfolioContactPage"/></child>
+                    <!-- CONTENT -->
+                    <property name="content">
+                      <object class="AdwNavigationPage">
+                        <property name="child">
+                          <object class="AdwViewStack" id="view_stack">
+                            <child><object class="PortfolioAboutPage"/></child>
+                            <child><object class="PortfolioExperiencePage"/></child>
+                            <child><object class="PortfolioProjectsPage"/></child>
+                            <child><object class="PortfolioSkillsPage"/></child>
+                            <child><object class="PortfolioAchievementsPage"/></child>
+                            <child><object class="PortfolioContactPage"/></child>
+                          </object>
+                        </property>
                       </object>
                     </property>
+
                   </object>
                 </property>
-
               </object>
-            </property>
+            </child>
+
+          </object>
+        </child>
+
+        <!-- ================= FLOATING CLOSE BUTTON ================= -->
+        <child type="overlay">
+          <object class="GtkButton">
+            <property name="icon-name">window-close-symbolic</property>
+            <property name="action-name">window.close</property>
+            <property name="halign">end</property>
+            <property name="valign">start</property>
+            <property name="margin-top">12</property>
+            <property name="margin-end">12</property>
+            <style>
+              <class name="circular"/>
+              <class name="flat"/>
+            </style>
           </object>
         </child>
 
