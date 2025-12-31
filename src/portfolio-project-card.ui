@@ -4,30 +4,31 @@
   <requires lib="Adw" version="1.0"/>
 
   <template class="PortfolioProjectCard" parent="AdwBin">
-    <style>
-      <class name="card"/>
-    </style>
 
     <property name="child">
       <object class="GtkBox">
         <property name="orientation">vertical</property>
         <property name="spacing">10</property>
+
+        <!-- Image -->
         <child>
-            <object class="GtkImage" id="project_image">
-                <property name="height-request">150</property>
-                <property name="margin-bottom">10</property>
-            </object>
+          <object class="GtkImage" id="project_image">
+            <property name="height-request">150</property>
+            <property name="margin-bottom">10</property>
+          </object>
         </child>
+
+        <!-- Content -->
         <child>
           <object class="GtkBox">
             <property name="orientation">vertical</property>
             <property name="spacing">10</property>
-            <property name="margin-top">16</property>
-            <property name="margin-bottom">16</property>
-            <property name="margin-start">16</property>
-            <property name="margin-end">16</property>
+            <property name="margin-top">12</property>
+            <property name="margin-bottom">12</property>
+            <property name="margin-start">12</property>
+            <property name="margin-end">12</property>
 
-            <!-- TITLE -->
+            <!-- Title -->
             <child>
               <object class="GtkLabel" id="title_label">
                 <property name="xalign">0</property>
@@ -37,7 +38,7 @@
               </object>
             </child>
 
-            <!-- SUBTITLE -->
+            <!-- Subtitle -->
             <child>
               <object class="GtkLabel" id="subtitle_label">
                 <property name="xalign">0</property>
@@ -47,7 +48,7 @@
               </object>
             </child>
 
-            <!-- DESCRIPTION -->
+            <!-- Description -->
             <child>
               <object class="GtkLabel" id="description_label">
                 <property name="xalign">0</property>
@@ -58,7 +59,7 @@
               </object>
             </child>
 
-            <!-- ACHIEVEMENT -->
+            <!-- Achievement -->
             <child>
               <object class="GtkBox" id="achievement_box">
                 <property name="orientation">horizontal</property>
@@ -84,7 +85,7 @@
               </object>
             </child>
 
-            <!-- TECH STACK -->
+            <!-- Tech -->
             <child>
               <object class="GtkFlowBox" id="tech_flowbox">
                 <property name="row-spacing">8</property>
@@ -93,7 +94,7 @@
               </object>
             </child>
 
-            <!-- LINKS -->
+            <!-- Links -->
             <child>
               <object class="GtkBox" id="links_box">
                 <property name="orientation">horizontal</property>
@@ -101,6 +102,7 @@
                 <property name="margin-top">10</property>
               </object>
             </child>
+
           </object>
         </child>
       </object>

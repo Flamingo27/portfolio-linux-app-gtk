@@ -8,6 +8,7 @@
       <object class="GtkScrolledWindow">
         <property name="hscrollbar-policy">never</property>
         <property name="vscrollbar-policy">automatic</property>
+
         <property name="child">
           <object class="AdwClamp">
             <property name="margin-top">24</property>
@@ -15,10 +16,13 @@
             <property name="margin-start">16</property>
             <property name="margin-end">16</property>
             <property name="maximum-size">900</property>
+
             <property name="child">
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
                 <property name="spacing">24</property>
+
+                <!-- Title -->
                 <child>
                   <object class="GtkLabel">
                     <property name="label">Experience</property>
@@ -28,11 +32,17 @@
                     </style>
                   </object>
                 </child>
+
+                <!-- LIST -->
                 <child>
                   <object class="GtkListBox" id="experience_list_box">
                     <property name="selection-mode">none</property>
+                    <style>
+                      <class name="boxed-list"/>
+                    </style>
                   </object>
                 </child>
+
               </object>
             </property>
           </object>

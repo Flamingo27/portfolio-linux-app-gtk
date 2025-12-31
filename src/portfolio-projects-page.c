@@ -7,7 +7,7 @@
 struct _PortfolioProjectsPage
 {
   AdwBin parent_instance;
-  AdwPreferencesGroup *projects_list_box;
+  GtkListBox *projects_list_box;
 };
 
 G_DEFINE_FINAL_TYPE (
@@ -17,8 +17,7 @@ G_DEFINE_FINAL_TYPE (
 )
 
 static void
-portfolio_projects_page_class_init
-  (PortfolioProjectsPageClass *klass)
+portfolio_projects_page_class_init (PortfolioProjectsPageClass *klass)
 {
   GtkWidgetClass *wc = GTK_WIDGET_CLASS (klass);
 
@@ -35,26 +34,25 @@ portfolio_projects_page_class_init
 }
 
 static void
-portfolio_projects_page_init
-  (PortfolioProjectsPage *self)
+portfolio_projects_page_init (PortfolioProjectsPage *self)
 {
-  gsize i;
-
   gtk_widget_init_template (GTK_WIDGET (self));
 
-  for (i = 0; i < num_projects; i++) {
+  for (gsize i = 0; i < num_projects; i++) {
     GtkWidget *card =
       GTK_WIDGET (portfolio_project_card_new (&projects[i]));
 
-    adw_preferences_group_add (self->projects_list_box, card);
+    gtk_list_box_append (self->projects_list_box, card);
+
+    GtkListBoxRow *row =
+      GTK_LIST_BOX_ROW (gtk_widget_get_parent (card));
+
+    gtk_list_box_row_set_activatable (row, TRUE);
   }
 }
 
 PortfolioProjectsPage *
 portfolio_projects_page_new (void)
 {
-  return g_object_new (
-    PORTFOLIO_TYPE_PROJECTS_PAGE,
-    NULL
-  );
+  return g_object_new (PORTFOLIO_TYPE_PROJECTS_PAGE, NULL);
 }

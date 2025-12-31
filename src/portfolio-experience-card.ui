@@ -5,8 +5,6 @@
 
   <template class="PortfolioExperienceCard" parent="GtkBox">
     <property name="orientation">vertical</property>
-    <property name="css-classes">card</property>
-    <property name="margin-bottom">12</property>
     <property name="spacing">12</property>
     <property name="vexpand">false</property>
 
@@ -14,19 +12,21 @@
       <object class="GtkBox">
         <property name="orientation">vertical</property>
         <property name="spacing">10</property>
-        <property name="margin-start">20</property>
-        <property name="margin-end">20</property>
-        <property name="margin-top">20</property>
-        <property name="margin-bottom">20</property>
+        <property name="margin-start">12</property>
+        <property name="margin-end">12</property>
+        <property name="margin-top">12</property>
+        <property name="margin-bottom">12</property>
 
+        <!-- Header row -->
         <child>
           <object class="GtkBox">
             <property name="orientation">horizontal</property>
             <property name="spacing">10</property>
+
             <child>
               <object class="GtkBox">
                 <property name="orientation">vertical</property>
-                <property name="vexpand">false</property>
+
                 <child>
                   <object class="GtkLabel" id="role_label">
                     <property name="wrap">true</property>
@@ -36,17 +36,19 @@
                     </style>
                   </object>
                 </child>
+
                 <child>
                   <object class="GtkBox">
                     <property name="orientation">horizontal</property>
                     <property name="spacing">6</property>
-                    <property name="vexpand">false</property>
+
                     <child>
                       <object class="GtkImage">
                         <property name="icon-name">business-symbolic</property>
                         <property name="pixel-size">16</property>
                       </object>
                     </child>
+
                     <child>
                       <object class="GtkLabel" id="company_label">
                         <property name="wrap">true</property>
@@ -61,23 +63,24 @@
                 </child>
               </object>
             </child>
+
             <child>
               <object class="GtkBox">
                 <property name="orientation">horizontal</property>
                 <property name="spacing">6</property>
+                <property name="hexpand">true</property>
                 <property name="halign">end</property>
                 <property name="valign">center</property>
-                <property name="hexpand">true</property>
-                <property name="vexpand">false</property>
+
                 <child>
                   <object class="GtkImage">
                     <property name="icon-name">x-office-calendar-symbolic</property>
                     <property name="pixel-size">14</property>
                   </object>
                 </child>
+
                 <child>
                   <object class="GtkLabel" id="duration_label">
-                    <property name="wrap">false</property>
                     <property name="halign">end</property>
                     <style>
                       <class name="body"/>
@@ -89,6 +92,7 @@
           </object>
         </child>
 
+        <!-- Description -->
         <child>
           <object class="GtkLabel" id="description_label">
             <property name="wrap">true</property>
@@ -99,6 +103,7 @@
           </object>
         </child>
 
+        <!-- Highlights -->
         <child>
           <object class="GtkBox" id="highlights_box">
             <property name="orientation">vertical</property>
@@ -106,6 +111,7 @@
           </object>
         </child>
 
+        <!-- Links -->
         <child>
           <object class="GtkBox" id="links_box">
             <property name="orientation">horizontal</property>
@@ -113,6 +119,7 @@
             <property name="halign">start</property>
           </object>
         </child>
+
       </object>
     </child>
   </template>
