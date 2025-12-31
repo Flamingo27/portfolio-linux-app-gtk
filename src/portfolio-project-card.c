@@ -186,16 +186,15 @@ portfolio_project_card_new (const Project *project)
 
           if (g_strcmp0(link->type, "demo") == 0) {
 
-              icon_image = gtk_image_new_from_icon_name("go-next-symbolic"); // Equivalent to ArrowForward
+              icon_image = gtk_image_new_from_icon_name("arrow2-right-symbolic"); // Equivalent to ArrowForward
 
           } else if (g_strcmp0(link->type, "drive") == 0) {
 
-              icon_image = gtk_image_new_from_resource("/org/alokparna/portfolio/gtk/google_drive_logo.svg"); // Custom icon
+              icon_image = gtk_image_new_from_icon_name("googledrive-symbolic");  // Custom icon
 
           } else {
 
-              icon_image = gtk_image_new_from_icon_name("dialog-information-symbolic"); // Equivalent to Info
-
+              icon_image = gtk_image_new_from_icon_name("info-outline-symbolic"); // Equivalent to Info
           }
 
           gtk_image_set_pixel_size(GTK_IMAGE(icon_image), 24); // Size of 24.dp in Kotlin

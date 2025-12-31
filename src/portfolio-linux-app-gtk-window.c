@@ -99,6 +99,16 @@ static void
 portfolio_linux_app_gtk_window_init (PortfolioLinuxAppGtkWindow *self)
 {
   GtkWidget *hero_child;
+  GtkIconTheme *icon_theme;
+  GdkDisplay *display;
+
+  /* Ensure icon theme is set up (fallback in case app startup didn't work) */
+  display = gtk_widget_get_display (GTK_WIDGET (self));
+  if (display != NULL)
+  {
+    icon_theme = gtk_icon_theme_get_for_display (display);
+    gtk_icon_theme_add_resource_path (icon_theme, "/org/alokparna/portfolio/gtk/icons");
+  }
 
   gtk_widget_init_template (GTK_WIDGET (self));
 

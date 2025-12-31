@@ -46,15 +46,29 @@ portfolio_linux_app_gtk_application_activate (GApplication *app)
 static void
 portfolio_linux_app_gtk_application_startup (GApplication *app)
 {
-    /* C90 Rule: Variables must be declared at the top */
     GtkIconTheme *icon_theme;
+    GdkDisplay *display;
 
     /* Chain up to the parent startup first */
     G_APPLICATION_CLASS (portfolio_linux_app_gtk_application_parent_class)->startup (app);
 
-    /* Now we can do the work */
-    icon_theme = gtk_icon_theme_get_for_display (gdk_display_get_default ());
-    gtk_icon_theme_add_resource_path (icon_theme, "/org/alokparna/portfolio/gtk/icons");
+    /* Get the default display */
+    display = gdk_display_get_default ();
+    
+    if (display != NULL)
+    {
+        /* Get icon theme for the display */
+        icon_theme = gtk_icon_theme_get_for_display (display);
+        
+        /* Add our custom icon resource path */
+        gtk_icon_theme_add_resource_path (icon_theme, "/org/alokparna/portfolio/gtk/icons");
+        
+        g_print ("Icon theme initialized with resource path\n");
+    }
+    else
+    {
+        g_warning ("Could not get default display for icon theme setup");
+    }
 }
 
 static void

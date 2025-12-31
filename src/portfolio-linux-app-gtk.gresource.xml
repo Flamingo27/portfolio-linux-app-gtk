@@ -34,6 +34,23 @@
     <file>icons/linkedin-symbolic.svg</file>
     <file>icons/location-symbolic.svg</file>
     <file>icons/mail-symbolic.svg</file>
-    <file>icons/phone-symbolic.svg</file>
+    <file>icons/call-symbolic.svg</file>
+    <file>icons/arrow2-right-symbolic.svg</file>
+    <file>icons/branch-compare-arrows-symbolic.svg</file>
+    <file>icons/building-symbolic.svg</file>
+    <file>icons/code-symbolic.svg</file>
+    <file>icons/globe-alt2-symbolic.svg</file>
+    <file>icons/harddisk-symbolic.svg</file>
+    <file>icons/info-outline-symbolic.svg</file>
+    <file>icons/month-symbolic.svg</file>
+    <file>icons/school-symbolic.svg</file>
+    <file>icons/trophy-symbolic.svg</file>
+    <file>icons/star-symbolic.svg</file>
+    <file>icons/open-book-symbolic.svg</file>
+    <file>icons/processor-symbolic.svg</file>
+    <file>icons/radiowaves-1-symbolic.svg</file>
+    <file>icons/phonelink-symbolic.svg</file>
+    <file>icons/puzzle-piece-symbolic.svg</file>
+    <file>icons/pocket-knife-symbolic.svg</file>
   </gresource>
 </gresources>

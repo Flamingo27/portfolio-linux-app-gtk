@@ -1,57 +1,71 @@
+/* Card styling */
 .card {
   border-radius: 12px;
-  background-color: @theme_bg_color; /* Use theme background color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: @theme_bg_color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin-bottom: 12px;
 }
 
-listrow:not(:last-child) { /* Apply margin to all but the last listrow */
+/* List row spacing */
+listrow:not(:last-child) {
   margin-bottom: 20px;
 }
 
-
-
-
+/* Action buttons */
 .action-button {
-  padding: 12px 24px; /* Add some padding */
-  border-radius: 8px; /* Slightly rounded corners */
-  background-color: @theme_accent_color; /* Use accent color for background */
-  color: @theme_on_accent_color; /* Text color */
-  font-weight: bold; /* Make text bold */
-  min-width: 120px; /* Minimum width for buttons */
-  /* Removed: text-align: center; */
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: @theme_accent_color;
+  color: @theme_on_accent_color;
+  font-weight: bold;
+  min-width: 120px;
 }
 
 .action-button:hover {
-  background-color: shade(@theme_accent_color, 0.9); /* Darken on hover */
+  background-color: shade(@theme_accent_color, 0.9);
 }
 
-/* Styles for tech tags */
+/* Fix for all button icons - simple symbolic style */
+.action-button image,
+button.pill image,
+button.flat image,
+button image {
+  -gtk-icon-style: symbolic;
+}
+
+/* View My Work button should have proper contrast */
+#view_work_button image {
+  color: white;
+  -gtk-icon-style: symbolic;
+}
+
+/* Tech tag pills */
 .pill {
-  background-color: @theme_accent_bg_color;
-  color: @theme_accent_color;
   padding: 4px 8px;
-  border-radius: 16px; /* Highly rounded */
+  border-radius: 16px;
   font-size: smaller;
   font-weight: bold;
 }
 
-/* Styles for circular link buttons */
+/* Circular link buttons */
 .circular-button {
-  border-radius: 50%; /* Make it circular */
-  background-color: @theme_accent_color; /* Use primary color from Kotlin example */
-  min-width: 48px; /* Fixed size */
-  min-height: 48px; /* Fixed size */
-  padding: 0; /* Remove default padding */
+  border-radius: 50%;
+  background-color: @theme_accent_color;
+  min-width: 48px;
+  min-height: 48px;
+  padding: 0;
 }
 
 .circular-button:hover {
-  background-color: shade(@theme_accent_color, 0.9); /* Darken on hover */
+  background-color: shade(@theme_accent_color, 0.9);
 }
 
+.circular-button image {
+  color: white;
+  -gtk-icon-style: symbolic;
+}
 
-
-/* Universal styling for all pages */
+/* Universal page styling */
 .page-container {
   margin: 32px 16px;
   padding: 16px;
@@ -72,12 +86,6 @@ listrow:not(:last-child) { /* Apply margin to all but the last listrow */
   margin-bottom: 24px;
 }
 
-.page-content {
-}
-
-.page-action-row {
-}
-
 .page-action-button {
   padding: 12px 24px;
   border-radius: 8px;
@@ -91,20 +99,9 @@ listrow:not(:last-child) { /* Apply margin to all but the last listrow */
   background-color: shade(@theme_accent_color, 0.9);
 }
 
-
+/* Achievement styling */
 .achievement-event {
   color: @accent_color;
   font-weight: 600;
   font-size: 0.95rem;
 }
-.achievement-event {
-  color: @accent_color;
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-.achievement-event {
-  color: @accent_color;
-  font-weight: 600;
-}
-

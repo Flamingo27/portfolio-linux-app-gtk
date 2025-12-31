@@ -20,13 +20,13 @@ G_DEFINE_FINAL_TYPE (PortfolioSkillCategoryCard, portfolio_skill_category_card, 
 static const gchar *
 get_icon_name_for_skill (const gchar *skill_icon_name)
 {
-    if (g_strcmp0(skill_icon_name, "Code") == 0) return "applications-development-symbolic"; // Code icon
-    if (g_strcmp0(skill_icon_name, "Layout") == 0) return "web-browser-symbolic"; // Web icon
-    if (g_strcmp0(skill_icon_name, "Database") == 0) return "drive-harddisk-symbolic"; // Database icon
-    if (g_strcmp0(skill_icon_name, "Cpu") == 0) return "cpu-symbolic"; // CPU icon
-    if (g_strcmp0(skill_icon_name, "GitBranch") == 0) return "folder-sync-symbolic"; // Git branch or sync folder
-    if (g_strcmp0(skill_icon_name, "Globe") == 0) return "network-wireless-symbolic"; // Globe or network icon
-    return "starred-symbolic"; // Default or info icon
+    if (g_strcmp0(skill_icon_name, "Code") == 0) return "code-symbolic"; // Code icon
+    if (g_strcmp0(skill_icon_name, "Layout") == 0) return "globe-alt2-symbolic"; // Web icon
+    if (g_strcmp0(skill_icon_name, "Database") == 0) return "harddisk-symbolic"; // Database icon
+    if (g_strcmp0(skill_icon_name, "Cpu") == 0) return "processor-symbolic"; // CPU icon
+    if (g_strcmp0(skill_icon_name, "GitBranch") == 0) return "branch-compare-arrows-symbolic"; // Git branch or sync folder
+    if (g_strcmp0(skill_icon_name, "Globe") == 0) return "radiowaves-1-symbolic"; // Globe or network icon
+    return "star-symbolic"; // Default or info icon
 }
 
 static void

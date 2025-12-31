@@ -73,7 +73,7 @@ Passionate about creating impactful technology that solves real-world problems.
                     <child>
                       <object class="GtkButton" id="github_button">
                         <style>
-                          <class name="action-button"/>
+                          <class name="pill"/>
                         </style>
                         <property name="child">
                           <object class="GtkBox">
@@ -99,7 +99,7 @@ Passionate about creating impactful technology that solves real-world problems.
                     <child>
                       <object class="GtkButton" id="linkedin_button">
                         <style>
-                          <class name="action-button"/>
+                          <class name="pill"/>
                         </style>
                         <property name="child">
                           <object class="GtkBox">
@@ -168,7 +168,7 @@ Passionate about creating impactful technology that solves real-world problems.
                         <signal name="activated" handler="on_phone_activated"/>
                         <child type="prefix">
                           <object class="GtkImage">
-                            <property name="icon-name">phone-symbolic</property>
+                            <property name="icon-name">call-symbolic</property>
                             <property name="pixel-size">16</property>
                           </object>
                         </child>
@@ -187,7 +187,6 @@ Passionate about creating impactful technology that solves real-world problems.
                     <style>
                       <class name="pill"/>
                       <class name="suggested-action"/>
-                      <class name="action-button"/>
                     </style>
                   </object>
                 </child>
@@ -200,4 +199,3 @@ Passionate about creating impactful technology that solves real-world problems.
     </property>
   </template>
 </interface>
-

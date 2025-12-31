@@ -5,15 +5,15 @@ static const char *
 icon_for_skill_category (const char *name)
 {
   if (g_strcmp0 (name, "Programming Languages") == 0)
-    return "applications-development-symbolic";
+    return "puzzle-piece-symbolic";
   if (g_strcmp0 (name, "Frameworks & Tools") == 0)
-    return "tools-symbolic";
+    return "pocket-knife-symbolic";
   if (g_strcmp0 (name, "Databases") == 0)
-    return "drive-harddisk-symbolic";
+    return "harddisk-symbolic";
   if (g_strcmp0 (name, "Platforms") == 0)
-    return "computer-symbolic";
+    return "phonelink-symbolic";
 
-  return "starred-symbolic";
+  return "star-symbolic";
 }
 
 struct _PortfolioSkillsPage {

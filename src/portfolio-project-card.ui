@@ -68,7 +68,7 @@
 
                 <child>
                   <object class="GtkImage">
-                    <property name="icon-name">starred-symbolic</property>
+                    <property name="icon-name">star-symbolic</property>
                     <property name="pixel-size">16</property>
                   </object>
                 </child>
