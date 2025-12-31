@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
   <path
-    fill="#ffffff"
+    fill="currentColor"
     transform="scale(1.5)"
     d="M 2 2
        C 0.892 2 0 2.892 0 4

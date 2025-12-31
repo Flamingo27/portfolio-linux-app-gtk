@@ -110,6 +110,7 @@ Passionate about creating impactful technology that solves real-world problems.
                                 <property name="icon-name">linkedin-symbolic</property>
                                 <property name="pixel-size">16</property>
                               </object>
+
                             </child>
                             <child>
                               <object class="GtkLabel">
@@ -138,7 +139,7 @@ Passionate about creating impactful technology that solves real-world problems.
                         <child type="prefix">
                           <object class="GtkImage">
                             <property name="icon-name">location-symbolic</property>
-                            <property name="pixel-size">24</property>
+                            <property name="pixel-size">16</property>
                           </object>
                         </child>
                       </object>
@@ -153,7 +154,7 @@ Passionate about creating impactful technology that solves real-world problems.
                         <child type="prefix">
                           <object class="GtkImage">
                             <property name="icon-name">mail-symbolic</property>
-                            <property name="pixel-size">24</property>
+                            <property name="pixel-size">16</property>
                           </object>
                         </child>
                       </object>
@@ -168,7 +169,7 @@ Passionate about creating impactful technology that solves real-world problems.
                         <child type="prefix">
                           <object class="GtkImage">
                             <property name="icon-name">phone-symbolic</property>
-                            <property name="pixel-size">24</property>
+                            <property name="pixel-size">16</property>
                           </object>
                         </child>
                       </object>

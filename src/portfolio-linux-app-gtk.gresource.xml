@@ -26,12 +26,14 @@
     <file>project_irrigation.jpg</file>
     <file>project_stocks.jpg</file>
     <file>project_unicred.jpg</file>
-    <file preprocess="xml-stripblanks">icons/phone-symbolic.svg</file>
-    <file preprocess="xml-stripblanks">icons/send-symbolic.svg</file>
-    <file preprocess="xml-stripblanks">icons/github-symbolic.svg</file>
-    <file preprocess="xml-stripblanks">icons/linkedin-symbolic.svg</file>
-    <file preprocess="xml-stripblanks">icons/location-symbolic.svg</file>
-    <file preprocess="xml-stripblanks">icons/mail-symbolic.svg</file>
-    <file preprocess="xml-stripblanks">icons/googledrive-symbolic.svg</file>
+
+    <!-- Icons in src/icons/ -->
+    <file>icons/github-symbolic.svg</file>
+    <file>icons/googledrive-symbolic.svg</file>
+    <file>icons/linkedin-icon.svg</file>
+    <file>icons/linkedin-symbolic.svg</file>
+    <file>icons/location-symbolic.svg</file>
+    <file>icons/mail-symbolic.svg</file>
+    <file>icons/phone-symbolic.svg</file>
   </gresource>
 </gresources>
