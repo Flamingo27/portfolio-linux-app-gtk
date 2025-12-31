@@ -43,16 +43,23 @@ static void
 on_link_button_clicked (GtkButton *button,
                         gpointer   user_data)
 {
-  const gchar *url = user_data;
+  const gchar *url = (const gchar *)user_data;
+
   if (url != NULL && strlen(url) > 0) {
       GtkRoot *root = gtk_widget_get_root (GTK_WIDGET (button));
       GtkUriLauncher *launcher = gtk_uri_launcher_new (url);
       gtk_uri_launcher_launch (launcher, GTK_WINDOW (root), NULL, on_uri_launched, NULL);
+      g_print ("Launching URL: %s\n", url);
   } else {
       g_warning("Attempted to launch a NULL or empty URL.");
   }
 }
 
+static void
+on_link_button_destroy (gpointer data)
+{
+  g_free (data);
+}
 
 static void
 portfolio_project_card_class_init (PortfolioProjectCardClass *klass)
@@ -77,142 +84,90 @@ portfolio_project_card_init (PortfolioProjectCard *self)
 }
 
 PortfolioProjectCard *
-
 portfolio_project_card_new (const Project *project)
-
 {
-
   PortfolioProjectCard *self = g_object_new (PORTFOLIO_TYPE_PROJECT_CARD, NULL);
-
   gchar *image_path;
-
   gsize i;
-
   GtkWidget *tech_label_box;
-
   GtkWidget *tech_label;
-
   GtkWidget *link_button;
-
   const ProjectLink *link;
-
   GtkWidget *icon_image;
-
-
+  gchar *url_copy;
 
   self->project = project;
 
-
-
   // Set project image
-
   if (project->image != NULL) {
-
-      image_path = g_strdup_printf("/org/alokparna/portfolio/gtk/%s", project->image); // Assuming .png for project images
-
+      image_path = g_strdup_printf("/org/alokparna/portfolio/gtk/%s", project->image);
       gtk_image_set_from_resource(self->project_image, image_path);
-
       g_free(image_path);
-
   }
-
-
 
   gtk_label_set_text (self->title_label, project->title);
-
   gtk_label_set_text (self->subtitle_label, project->subtitle);
-
   gtk_label_set_text (self->description_label, project->description);
 
-
-
   // Achievement
-
   if (project->achievement != NULL && strlen(project->achievement) > 0) {
-
       gtk_label_set_text (self->achievement_label, project->achievement);
-
       gtk_widget_set_visible(GTK_WIDGET(self->achievement_box), TRUE);
-
   } else {
-
       gtk_widget_set_visible(GTK_WIDGET(self->achievement_box), FALSE);
-
   }
-
-
 
   // Tech stack
-
   if (project->tech != NULL) {
-
       for (i = 0; i < project->n_tech; i++) {
-
-          tech_label_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0); // Use GtkBox for padding/background
-
-          gtk_widget_add_css_class(tech_label_box, "pill"); // Using a "pill" class for tech labels
-
+          tech_label_box = gtk_box_new(GTK_ORIENTATION_HORIZONTAL, 0);
+          gtk_widget_add_css_class(tech_label_box, "pill");
           
-
           tech_label = gtk_label_new(project->tech[i]);
-
           gtk_box_append(GTK_BOX(tech_label_box), tech_label);
-
           gtk_flow_box_append(self->tech_flowbox, tech_label_box);
-
       }
-
   }
-
-
 
   // Links
-
   if (project->links != NULL) {
-
       for (i = 0; i < project->n_links; i++) {
-
           link = &project->links[i];
+          link_button = gtk_button_new();
 
-                    link_button = gtk_button_new();
+/* Same blue as "View My Work" */
+          gtk_widget_add_css_class(link_button, "suggested-action");
 
-                    gtk_widget_add_css_class(link_button, "circular-button");
+/* Make it circular */
+          gtk_widget_add_css_class(link_button, "circular-action");
+          gtk_widget_add_css_class(link_button, "soft-accent");
 
-                    gtk_widget_set_tooltip_text(link_button, link->label);
-
-          
+          gtk_widget_set_tooltip_text(link_button, link->label);
 
           icon_image = NULL;
-
           if (g_strcmp0(link->type, "demo") == 0) {
-
-              icon_image = gtk_image_new_from_icon_name("arrow2-right-symbolic"); // Equivalent to ArrowForward
-
+              icon_image = gtk_image_new_from_icon_name("arrow2-right-symbolic");
           } else if (g_strcmp0(link->type, "drive") == 0) {
-
-              icon_image = gtk_image_new_from_icon_name("googledrive-symbolic");  // Custom icon
-
+              icon_image = gtk_image_new_from_icon_name("googledrive-symbolic");
           } else {
-
-              icon_image = gtk_image_new_from_icon_name("info-outline-symbolic"); // Equivalent to Info
+              icon_image = gtk_image_new_from_icon_name("info-outline-symbolic");
           }
-
-          gtk_image_set_pixel_size(GTK_IMAGE(icon_image), 24); // Size of 24.dp in Kotlin
-
+          gtk_image_set_pixel_size(GTK_IMAGE(icon_image), 24);
           gtk_button_set_child(GTK_BUTTON(link_button), icon_image);
 
+          // IMPORTANT: Duplicate the URL string so it persists
+          url_copy = g_strdup(link->url);
 
-
-          g_signal_connect(link_button, "clicked", G_CALLBACK(on_link_button_clicked), (gpointer)link->url);
+          g_signal_connect_data(link_button,
+                               "clicked",
+                               G_CALLBACK(on_link_button_clicked),
+                               url_copy,
+                               (GClosureNotify)on_link_button_destroy,
+                               0);
 
           gtk_box_append(self->links_box, link_button);
-
       }
-
   }
 
-
-
   return self;
-
 }

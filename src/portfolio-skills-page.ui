@@ -41,7 +41,7 @@
                     <child>
                       <object class="GtkLabel">
                         <property name="label">
-                          Tools, technologies, and domains I work with
+Tools, technologies, and domains I work with
                         </property>
                         <style>
                           <class name="caption"/>

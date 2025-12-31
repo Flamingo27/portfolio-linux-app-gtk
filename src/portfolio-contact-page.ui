@@ -41,7 +41,7 @@
                     <child>
                       <object class="GtkLabel">
                         <property name="label">
-                          Let's discuss your next project or opportunity
+Let's discuss your next project or opportunity
                         </property>
                         <style>
                           <class name="caption"/>

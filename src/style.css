@@ -48,17 +48,28 @@ button image {
 }
 
 /* Circular link buttons */
-.circular-button {
-  border-radius: 50%;
-  background-color: @theme_accent_color;
-  min-width: 48px;
-  min-height: 48px;
+.circular-action {
+  min-width: 40px;
+  min-height: 40px;
   padding: 0;
+  border-radius: 999px;
 }
 
-.circular-button:hover {
-  background-color: shade(@theme_accent_color, 0.9);
+/* soften the blue */
+.soft-accent {
+  background-color: alpha(@accent_color, 0.85);
 }
+
+/* subtle hover — color shift only */
+.soft-accent:hover {
+  background-color: alpha(@accent_color, 0.95);
+}
+
+/* pressed */
+.soft-accent:active {
+  background-color: alpha(@accent_color, 0.75);
+}
+
 
 .circular-button image {
   color: white;

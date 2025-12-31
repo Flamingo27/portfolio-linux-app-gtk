@@ -41,7 +41,7 @@
                     <child>
                       <object class="GtkLabel">
                         <property name="label">
-                          Some of my work and personal endeavors
+Some of my work and personal endeavors
                         </property>
                         <style>
                           <class name="caption"/>
