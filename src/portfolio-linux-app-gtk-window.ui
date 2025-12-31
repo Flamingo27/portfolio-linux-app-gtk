@@ -31,7 +31,7 @@
                 <property name="child">
                   <object class="AdwNavigationSplitView">
 
-                    <!-- SIDEBAR -->
+                    <!-- ========== SIDEBAR ========== -->
                     <property name="sidebar">
                       <object class="AdwNavigationPage">
                         <property name="child">
@@ -46,10 +46,17 @@
                                 </style>
 
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">About</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Experience</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Projects</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Skills</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Achievements</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Publications</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Contact</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
                               </object>
@@ -59,7 +66,7 @@
                       </object>
                     </property>
 
-                    <!-- CONTENT -->
+                    <!-- ========== CONTENT ========== -->
                     <property name="content">
                       <object class="AdwNavigationPage">
                         <property name="child">
@@ -69,6 +76,7 @@
                             <child><object class="PortfolioProjectsPage"/></child>
                             <child><object class="PortfolioSkillsPage"/></child>
                             <child><object class="PortfolioAchievementsPage"/></child>
+                            <child><object class="PortfolioPublicationPage"/></child>
                             <child><object class="PortfolioContactPage"/></child>
                           </object>
                         </property>
@@ -88,10 +96,12 @@
           <object class="GtkButton">
             <property name="icon-name">window-close-symbolic</property>
             <property name="action-name">window.close</property>
+
             <property name="halign">end</property>
             <property name="valign">start</property>
             <property name="margin-top">12</property>
             <property name="margin-end">12</property>
+
             <style>
               <class name="circular"/>
               <class name="flat"/>

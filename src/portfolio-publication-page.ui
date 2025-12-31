@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<interface>
+  <requires lib="gtk" version="4.0"/>
+  <requires lib="libadwaita" version="1.0"/>
+
+  <template class="PortfolioPublicationPage" parent="AdwBin">
+    <property name="child">
+      <object class="GtkScrolledWindow">
+        <property name="hscrollbar-policy">never</property>
+
+        <property name="child">
+          <object class="AdwClamp">
+            <property name="maximum-size">760</property>
+
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">44</property>
+                <property name="margin-top">32</property>
+                <property name="margin-bottom">32</property>
+                <property name="margin-start">16</property>
+                <property name="margin-end">16</property>
+
+                <!-- HEADER -->
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">8</property>
+                    <property name="halign">center</property>
+
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Research &amp; Publications</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                          <attribute name="scale" value="2.4"/>
+                        </attributes>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">
+                          Exploring innovative approaches to memory capture and replay technology.
+                        </property>
+                        <property name="wrap">true</property>
+                        <style>
+                          <class name="caption"/>
+                        </style>
+                      </object>
+                    </child>
+                  </object>
+                </child>
+
+                <!-- CARD -->
+                <child>
+                  <object class="AdwPreferencesGroup" id="group">
+                    <!-- cards injected from C -->
+                  </object>
+                </child>
+
+              </object>
+            </property>
+          </object>
+        </property>
+      </object>
+    </property>
+  </template>
+</interface>

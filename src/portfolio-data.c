@@ -238,6 +238,35 @@ const Achievement achievements[] = {
 
 const gsize num_achievements = G_N_ELEMENTS(achievements);
 
+/* Publications Data */
+
+const Publication publications[] = {
+  {
+    .title = "NeuroLens: Capturing and Replaying Memories",
+    .type = "Research Paper",
+    .icon = "emblem-documents-symbolic",
+    .description = "Exploring innovative approaches to memory capture and replay technology.",
+    .url = "https://drive.google.com/file/d/1tNe8I2_Yp-L3CDPHQZU7esxdtA5HgbuM/view?usp=drive_link"
+  },
+  {
+    .title = "Empowering Creativity: The Positive Role of AI in Modern Authorship",
+    .type = "Research Article",
+    .icon = "emblem-documents-symbolic",
+    .description = "Analyzing AI's impact on creative writing and authorship in modern workflows.",
+    .url = "https://drive.google.com/file/d/1D8VFn4BecHFWOup0v6s8OD4WJqb1iANs/view?usp=drive_link"
+  },
+  {
+    .title = "Striving to be the best version of yourself: one block at a time",
+    .type = "Published Book (Kindle)",
+    .icon = "book-open-symbolic",
+    .description = "Personal development guide available as a Kindle book on Amazon.",
+    .url = "https://www.amazon.in/dp/B0DL3M2CPW"
+  }
+};
+
+const gsize num_publications = G_N_ELEMENTS(publications);
+
+
 // Function to initialize all data (especially hash tables)
 void
 portfolio_data_init (void)

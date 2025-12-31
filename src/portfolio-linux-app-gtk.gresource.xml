@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <gresources>
+
+  <!-- UI FILES & ASSETS -->
   <gresource prefix="/org/alokparna/portfolio/gtk">
     <file preprocess="xml-stripblanks">portfolio-linux-app-gtk-window.ui</file>
     <file preprocess="xml-stripblanks">portfolio-hero-page.ui</file>
@@ -14,25 +16,37 @@
     <file preprocess="xml-stripblanks">portfolio-additional-expertise-card.ui</file>
     <file preprocess="xml-stripblanks">portfolio-achievement-row.ui</file>
     <file preprocess="xml-stripblanks">portfolio-achievements-page.ui</file>
+    <file preprocess="xml-stripblanks">portfolio-publication-page.ui</file>
     <file preprocess="xml-stripblanks">shortcuts-dialog.ui</file>
+
     <file>style.css</file>
-    <file>google_drive_logo.svg</file> <!-- Add this line -->
+
     <file>alokparna_speaking.png</file>
-    <file>mail-icon.svg</file>
-    <file>location-icon.svg</file>
-    <file>phone-icon.svg</file>
-    <file>linkedin-icon.svg</file>
-    <file>github-icon.svg</file>
-    <file>github-symbolic.svg</file>
-    <file>linkedin-symbolic.svg</file>
-    <file>send-symbolic.svg</file>
+    <file>hero_background.jpg</file>
     <file>cura_horizon_logo.jpg</file>
     <file>iete_logo.jpg</file>
     <file>iic_logo.png</file>
-    <file>hero_background.jpg</file>
     <file>project_assistive.jpeg</file>
     <file>project_irrigation.jpg</file>
     <file>project_stocks.jpg</file>
     <file>project_unicred.jpg</file>
   </gresource>
+
+  <!-- SYMBOLIC ICONS -->
+  <gresource prefix="/org/alokparna/portfolio/gtk/icons">
+    <file>../data/icons/github-symbolic.svg</file>
+    <file>../data/icons/googledrive-symbolic.svg</file>
+    <file>../data/icons/linkedin-symbolic.svg</file>
+    <file>../data/icons/location-symbolic.svg</file>
+    <file>../data/icons/mail-symbolic.svg</file>
+    <file>send-symbolic.svg</file>
+  </gresource>
+
+  <!-- APP ICONS (HICOLOR) -->
+  <gresource prefix="/org/alokparna/portfolio/gtk/icons/hicolor">
+    <file>../data/icons/hicolor/scalable/apps/org.alokparna.portfolio.gtk.svg</file>
+    <file>../data/icons/hicolor/symbolic/apps/org.alokparna.portfolio.gtk-symbolic.svg</file>
+  </gresource>
+
 </gresources>
+

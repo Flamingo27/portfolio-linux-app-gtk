@@ -79,6 +79,21 @@ struct _Achievement {
 extern const Achievement achievements[];
 extern const gsize num_achievements;
 
+/* ───────── Publications ───────── */
+
+typedef struct _Publication Publication;
+
+struct _Publication {
+  const gchar *title;
+  const gchar *type;
+  const gchar *icon;
+  const gchar *description;
+  const gchar *url;
+};
+
+extern const Publication publications[];
+extern const gsize num_publications;
+
 /* ───────── Lifecycle ───────── */
 
 void portfolio_data_init (void);

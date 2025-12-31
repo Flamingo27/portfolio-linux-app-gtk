@@ -1,17 +1,19 @@
 {
-    "id" : "org.alokparna.portfolio.gtk",
-    "runtime" : "org.gnome.Platform",
-    "runtime-version" : "48",
-    "sdk" : "org.gnome.Sdk",
-    "command" : "portfolio-linux-app-gtk",
-    "finish-args" : [
+    "id": "org.alokparna.portfolio.gtk",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "48",
+    "sdk": "org.gnome.Sdk",
+    "command": "portfolio-linux-app-gtk",
+
+    "finish-args": [
         "--share=network",
         "--share=ipc",
+        "--socket=wayland",
         "--socket=fallback-x11",
-        "--device=dri",
-        "--socket=wayland"
+        "--device=dri"
     ],
-    "cleanup" : [
+
+    "cleanup": [
         "/include",
         "/lib/pkgconfig",
         "/man",
@@ -22,15 +24,15 @@
         "*.la",
         "*.a"
     ],
-    "modules" : [
+
+    "modules": [
         {
-            "name" : "portfolio-linux-app-gtk",
-            "builddir" : true,
-            "buildsystem" : "meson",
-            "sources" : [
+            "name": "portfolio-linux-app-gtk",
+            "buildsystem": "meson",
+            "sources": [
                 {
-                    "type" : "git",
-                    "url" : "file:///home/debarghaya/Documents/GitHub/Alu/portfolio-linux-app-gtk"
+                    "type": "git",
+                    "url": "file:///home/debarghaya/Documents/GitHub/Alu/portfolio-linux-app-gtk"
                 }
             ]
         }
