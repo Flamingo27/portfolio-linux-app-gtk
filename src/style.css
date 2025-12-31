@@ -1,6 +1,6 @@
 .card {
   border-radius: 12px;
-  background-color: @theme_bg_color; /* Use theme background color */
+  background-color: transparent; /* Use theme background color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   margin-bottom: 12px;
 }
@@ -111,4 +111,20 @@ listrow:not(:last-child) { /* Apply margin to all but the last listrow */
   background-color: shade(@theme_accent_color, 0.9);
 }
 
+
+.achievement-event {
+  color: @accent_color;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+.achievement-event {
+  color: @accent_color;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.achievement-event {
+  color: @accent_color;
+  font-weight: 600;
+}
 

@@ -4,7 +4,11 @@
   <requires lib="libadwaita" version="1.0"/>
 
   <template class="PortfolioAchievementRow" parent="AdwActionRow">
-    <property name="activatable">false</property>
+    <property name="activatable">true</property>
+
+    <child type="content">
+      <object class="GtkBox"/>
+    </child>
 
     <child type="prefix">
       <object class="GtkImage">

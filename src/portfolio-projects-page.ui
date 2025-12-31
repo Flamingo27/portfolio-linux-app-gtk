@@ -42,11 +42,7 @@
                   </object>
                 </child>
                 <child>
-                  <object class="GtkListBox" id="projects_list_box">
-                    <property name="selection-mode">none</property>
-                    <style>
-                      <class name="boxed-list"/>
-                    </style>
+                  <object class="AdwPreferencesGroup" id="projects_list_box">
                   </object>
                 </child>
               </object>

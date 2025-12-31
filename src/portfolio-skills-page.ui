@@ -1,47 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <requires lib="Adw" version="1.0"/>
+  <requires lib="libadwaita" version="1.0"/>
 
   <template class="PortfolioSkillsPage" parent="AdwBin">
     <property name="child">
-      <object class="AdwClamp">
-        <property name="margin-top">24</property>
-        <property name="margin-bottom">24</property>
-        <property name="margin-start">24</property>
-        <property name="margin-end">24</property>
+      <object class="GtkScrolledWindow">
+        <property name="hscrollbar-policy">never</property>
 
         <property name="child">
-          <object class="GtkBox">
-            <property name="orientation">vertical</property>
-            <property name="spacing">12</property>
-            <child>
-              <object class="GtkLabel">
-                <property name="label" translatable="yes">Technical Skills</property>
-                <property name="wrap">True</property>
-                <property name="xalign">0</property>
-                <style>
-                  <class name="title-2"/>
-                </style>
-              </object>
-            </child>
-            <child>
-              <object class="GtkScrolledWindow">
-                <property name="hscrollbar-policy">never</property>
-                <property name="vscrollbar-policy">automatic</property>
-                <property name="vexpand">true</property>
-                <property name="child">
-                  <object class="GtkFlowBox" id="skills_flowbox">
-                    <property name="valign">start</property>
+          <object class="AdwClamp">
+            <property name="maximum-size">760</property>
+            <property name="margin-top">32</property>
+            <property name="margin-bottom">32</property>
+            <property name="margin-start">16</property>
+            <property name="margin-end">16</property>
+
+            <property name="child">
+              <object class="GtkBox">
+                <property name="orientation">vertical</property>
+                <property name="spacing">36</property>
+
+                <!-- HEADER -->
+                <child>
+                  <object class="GtkBox">
+                    <property name="orientation">vertical</property>
+                    <property name="spacing">8</property>
                     <property name="halign">center</property>
-                    <property name="row-spacing">16</property>
-                    <property name="column-spacing">16</property>
-                    <property name="margin-top">12</property>
-                    <property name="selection-mode">none</property>
+
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">Skills</property>
+                        <attributes>
+                          <attribute name="weight" value="bold"/>
+                          <attribute name="scale" value="2.4"/>
+                        </attributes>
+                      </object>
+                    </child>
+
+                    <child>
+                      <object class="GtkLabel">
+                        <property name="label">
+                          Tools, technologies, and domains I work with
+                        </property>
+                        <style>
+                          <class name="caption"/>
+                        </style>
+                      </object>
+                    </child>
                   </object>
-                </property>
+                </child>
+
+                <!-- CARD -->
+                <child>
+                  <object class="AdwPreferencesGroup" id="skills_group"/>
+                </child>
+
               </object>
-            </child>
+            </property>
           </object>
         </property>
       </object>
