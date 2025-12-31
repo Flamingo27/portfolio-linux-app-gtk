@@ -49,27 +49,7 @@ listrow:not(:last-child) { /* Apply margin to all but the last listrow */
   background-color: shade(@theme_accent_color, 0.9); /* Darken on hover */
 }
 
-/* Sidebar row styles */
-.sidebar-row {
-  background-color: transparent;
-  border-radius: 8px;
-  padding: 8px;
-  transition: background-color 0.3s ease;
-}
 
-.sidebar-row:selected,
-.sidebar-row:hover {
-  background-color: @theme_accent_color;
-  color: @theme_on_accent_color;
-}
-
-.sidebar-row GtkLabel {
-  font-weight: bold;
-}
-
-.sidebar-row GtkImage {
-  color: @theme_on_accent_color;
-}
 
 /* Universal styling for all pages */
 .page-container {
