@@ -57,6 +57,8 @@
 
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Publications</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Education</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Contact</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
                               </object>
@@ -77,6 +79,7 @@
                             <child><object class="PortfolioSkillsPage"/></child>
                             <child><object class="PortfolioAchievementsPage"/></child>
                             <child><object class="PortfolioPublicationPage"/></child>
+                            <child><object class="PortfolioEducationPage"/></child>
                             <child><object class="PortfolioContactPage"/></child>
                           </object>
                         </property>

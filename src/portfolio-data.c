@@ -238,8 +238,6 @@ const Achievement achievements[] = {
 
 const gsize num_achievements = G_N_ELEMENTS(achievements);
 
-/* Publications Data */
-
 const Publication publications[] = {
   {
     .title = "NeuroLens: Capturing and Replaying Memories",
@@ -258,13 +256,47 @@ const Publication publications[] = {
   {
     .title = "Striving to be the best version of yourself: one block at a time",
     .type = "Published Book (Kindle)",
-    .icon = "book-open-symbolic",
+    .icon = "emblem-documents-symbolic",
     .description = "Personal development guide available as a Kindle book on Amazon.",
     .url = "https://www.amazon.in/dp/B0DL3M2CPW"
   }
 };
 
 const gsize num_publications = G_N_ELEMENTS(publications);
+
+/* Education Data */
+
+const Education education[] = {
+  {
+    .institution = "Institute of Engineering & Management (IEM)",
+    .degree = "B.Tech in Computer Science & Engineering",
+    .score = "9.1 GPA",
+    .duration = "2024 – Present",
+    .logo = "school-symbolic", // Using generic icon for now
+    .location = "Salt Lake, Kolkata, WB",
+    .highlight = TRUE
+  },
+  {
+    .institution = "Burdwan Model School",
+    .degree = "Senior Secondary (CBSE) — PCM Stream with Computer Science",
+    .score = "84.4%",
+    .duration = "2022 – 2024",
+    .logo = "school-symbolic", // Using generic icon for now
+    .location = "Burdwan, WB",
+    .highlight = FALSE
+  },
+  {
+    .institution = "St. Paul's Academy",
+    .degree = "Secondary (ICSE)",
+    .score = "98.6%",
+    .duration = "2012 – 2022",
+    .logo = "school-symbolic", // Using generic icon for now
+    .location = "Burdwan, WB",
+    .highlight = TRUE
+  }
+};
+
+const gsize num_education = G_N_ELEMENTS(education);
 
 
 // Function to initialize all data (especially hash tables)

@@ -16,6 +16,8 @@ portfolio_linux_app_gtk_sources = [
   'portfolio-achievements-page.c',
   'portfolio-publication-page.c',
   'portfolio-publication-card.c',
+  'portfolio-education-row.c',
+  'portfolio-education-page.c',
   'portfolio-data.c',
 ]
 

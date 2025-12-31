@@ -10,6 +10,7 @@ typedef struct _ProjectLink ProjectLink;
 typedef struct _Project Project;
 typedef struct _SkillCategory SkillCategory;
 typedef struct _Achievement Achievement;
+typedef struct _Education Education;
 
 /* ───────── Experience ───────── */
 
@@ -93,6 +94,21 @@ struct _Publication {
 
 extern const Publication publications[];
 extern const gsize num_publications;
+
+/* ───────── Education ───────── */
+
+struct _Education {
+  const gchar *institution;
+  const gchar *degree;
+  const gchar *score;
+  const gchar *duration;
+  const gchar *logo; // Will be used for icon name
+  const gchar *location;
+  gboolean highlight;
+};
+
+extern const Education education[];
+extern const gsize num_education;
 
 /* ───────── Lifecycle ───────── */
 

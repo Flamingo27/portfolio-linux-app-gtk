@@ -8,6 +8,7 @@
 #include "portfolio-skills-page.h"
 #include "portfolio-achievements-page.h"
 #include "portfolio-publication-page.h"
+#include "portfolio-education-page.h"
 #include "portfolio-contact-page.h"
 
 #include <gtk/gtk.h>
@@ -81,6 +82,7 @@ portfolio_linux_app_gtk_window_class_init (PortfolioLinuxAppGtkWindowClass *klas
   portfolio_skills_page_get_type ();
   portfolio_achievements_page_get_type ();
   portfolio_publication_page_get_type ();
+  portfolio_education_page_get_type ();
   portfolio_contact_page_get_type ();
 
   gtk_widget_class_set_template_from_resource (
