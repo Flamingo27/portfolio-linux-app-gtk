@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path
+    fill="#ffffff"
+    transform="scale(1.5)"
+    d="M 1.99 1.99
+       L 14 8
+       L 1.99 14
+       Z
+       M 3.3 4.41
+       L 11.2 8
+       L 3.3 11.59
+       Z"/>
+</svg>
+
