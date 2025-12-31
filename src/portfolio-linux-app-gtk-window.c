@@ -16,12 +16,10 @@ struct _PortfolioLinuxAppGtkWindow
 {
   AdwApplicationWindow parent_instance;
 
-  /* Navigation */
   AdwNavigationView *nav_view;
   AdwNavigationPage *hero_page;
   AdwNavigationPage *main_page;
 
-  /* Sidebar / content */
   GtkListBox   *nav_list;
   AdwViewStack *view_stack;
 };
@@ -32,7 +30,7 @@ G_DEFINE_FINAL_TYPE (
   ADW_TYPE_APPLICATION_WINDOW
 )
 
-/* Sidebar → ViewStack switching */
+/* Sidebar → content switching */
 static void
 on_nav_row_selected (GtkListBox    *box,
                      GtkListBoxRow *row,
@@ -60,7 +58,7 @@ on_nav_row_selected (GtkListBox    *box,
   g_object_unref (page);
 }
 
-/* Hero → Main navigation */
+/* Hero → Main */
 static void
 on_hero_show_work (PortfolioHeroPage *hero,
                    gpointer           user_data)
@@ -102,7 +100,6 @@ portfolio_linux_app_gtk_window_init (PortfolioLinuxAppGtkWindow *self)
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
-  /* Sidebar */
   g_signal_connect (
     self->nav_list,
     "row-selected",
@@ -113,7 +110,6 @@ portfolio_linux_app_gtk_window_init (PortfolioLinuxAppGtkWindow *self)
     self->nav_list,
     gtk_list_box_get_row_at_index (self->nav_list, 0));
 
-  /* Hero → Main */
   hero_child = adw_navigation_page_get_child (self->hero_page);
 
   g_signal_connect (
