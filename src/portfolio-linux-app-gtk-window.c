@@ -1,8 +1,3 @@
-/* portfolio-linux-app-gtk-window.c
- *
- * SPDX-License-Identifier: GPL-3.0-or-later
- */
-
 #include "config.h"
 
 #include "portfolio-linux-app-gtk-window.h"
@@ -17,15 +12,18 @@
 #include <gtk/gtk.h>
 #include <adwaita.h>
 
-/* ─────────────────────────────────────────────── */
-
 struct _PortfolioLinuxAppGtkWindow
 {
   AdwApplicationWindow parent_instance;
 
-  /* Template widgets */
-  AdwViewStack *view_stack;
+  /* Navigation */
+  AdwNavigationView *nav_view;
+  AdwNavigationPage *hero_page;
+  AdwNavigationPage *main_page;
+
+  /* Sidebar / content */
   GtkListBox   *nav_list;
+  AdwViewStack *view_stack;
 };
 
 G_DEFINE_FINAL_TYPE (
@@ -34,46 +32,49 @@ G_DEFINE_FINAL_TYPE (
   ADW_TYPE_APPLICATION_WINDOW
 )
 
-/* ───────────────── Sidebar → Page switch ───────────────── */
-
+/* Sidebar → ViewStack switching */
 static void
 on_nav_row_selected (GtkListBox    *box,
                      GtkListBoxRow *row,
                      gpointer       user_data)
 {
   PortfolioLinuxAppGtkWindow *self = user_data;
-  GtkSelectionModel *selection;
-  GListModel *model;
   AdwViewStackPage *page;
+  GtkWidget *child;
+  GListModel *pages;
   int index;
 
   if (!row)
     return;
 
   index = gtk_list_box_row_get_index (row);
+  pages = G_LIST_MODEL (adw_view_stack_get_pages (self->view_stack));
+  page = g_list_model_get_item (pages, index);
 
-  selection = adw_view_stack_get_pages (self->view_stack);
-  model = G_LIST_MODEL (selection);
-
-  page = g_list_model_get_item (model, index);
   if (!page)
     return;
 
-  adw_view_stack_set_visible_child (
-    self->view_stack,
-    adw_view_stack_page_get_child (page));
+  child = adw_view_stack_page_get_child (page);
+  adw_view_stack_set_visible_child (self->view_stack, child);
 
   g_object_unref (page);
 }
 
-/* ───────────────── Class Init ───────────────── */
+/* Hero → Main navigation */
+static void
+on_hero_show_work (PortfolioHeroPage *hero,
+                   gpointer           user_data)
+{
+  PortfolioLinuxAppGtkWindow *self = user_data;
+  adw_navigation_view_push (self->nav_view, self->main_page);
+}
 
+/* Class init */
 static void
 portfolio_linux_app_gtk_window_class_init (PortfolioLinuxAppGtkWindowClass *klass)
 {
   GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (klass);
 
-  /* 🔴 Register ALL custom widgets BEFORE template load */
   portfolio_hero_page_get_type ();
   portfolio_about_page_get_type ();
   portfolio_experience_page_get_type ();
@@ -86,48 +87,38 @@ portfolio_linux_app_gtk_window_class_init (PortfolioLinuxAppGtkWindowClass *klas
     widget_class,
     "/org/alokparna/portfolio/gtk/portfolio-linux-app-gtk-window.ui");
 
-  gtk_widget_class_bind_template_child (
-    widget_class,
-    PortfolioLinuxAppGtkWindow,
-    view_stack);
-
-  gtk_widget_class_bind_template_child (
-    widget_class,
-    PortfolioLinuxAppGtkWindow,
-    nav_list);
+  gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, nav_view);
+  gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, hero_page);
+  gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, main_page);
+  gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, nav_list);
+  gtk_widget_class_bind_template_child (widget_class, PortfolioLinuxAppGtkWindow, view_stack);
 }
 
-/* ───────────────── Instance Init ───────────────── */
-
+/* Instance init */
 static void
 portfolio_linux_app_gtk_window_init (PortfolioLinuxAppGtkWindow *self)
 {
-  GtkCssProvider *provider;
+  GtkWidget *hero_child;
 
   gtk_widget_init_template (GTK_WIDGET (self));
 
-  /* Sidebar selection handler */
+  /* Sidebar */
   g_signal_connect (
     self->nav_list,
     "row-selected",
     G_CALLBACK (on_nav_row_selected),
     self);
 
-  /* Select first row by default */
   gtk_list_box_select_row (
     self->nav_list,
     gtk_list_box_get_row_at_index (self->nav_list, 0));
 
-  /* Load app CSS */
-  provider = gtk_css_provider_new ();
-  gtk_css_provider_load_from_resource (
-    provider,
-    "/org/alokparna/portfolio/gtk/style.css");
+  /* Hero → Main */
+  hero_child = adw_navigation_page_get_child (self->hero_page);
 
-  gtk_style_context_add_provider_for_display (
-    gdk_display_get_default (),
-    GTK_STYLE_PROVIDER (provider),
-    GTK_STYLE_PROVIDER_PRIORITY_APPLICATION);
-
-  g_object_unref (provider);
+  g_signal_connect (
+    hero_child,
+    "show-work",
+    G_CALLBACK (on_hero_show_work),
+    self);
 }

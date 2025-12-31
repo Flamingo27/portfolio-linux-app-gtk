@@ -4,267 +4,66 @@
   <requires lib="libadwaita" version="1.0"/>
 
   <template class="PortfolioLinuxAppGtkWindow" parent="AdwApplicationWindow">
-
     <property name="title">Alokparna Mitra</property>
+    <property name="default-width">1100</property>
+    <property name="default-height">720</property>
 
     <property name="content">
-      <object class="GtkBox">
-        <property name="orientation">vertical</property>
+      <object class="AdwNavigationView" id="nav_view">
 
-        <!-- Add AdwHeaderBar at the top -->
+        <!-- HERO PAGE (NO SIDEBAR) -->
         <child>
-          <object class="AdwHeaderBar">
-            <property name="title-widget">
-              <object class="GtkLabel">
-                <property name="label">Alokparna Portfolio</property>
-                <property name="xalign">0</property>
-              </object>
+          <object class="AdwNavigationPage" id="hero_page">
+            <property name="child">
+              <object class="PortfolioHeroPage"/>
             </property>
           </object>
         </child>
 
-        <!-- Main content -->
+        <!-- MAIN APP (WITH SIDEBAR) -->
         <child>
-          <object class="AdwToolbarView">
-            <property name="content">
-              <object class="GtkPaned">
-                <property name="orientation">horizontal</property>
+          <object class="AdwNavigationPage" id="main_page">
+            <property name="child">
+              <object class="AdwOverlaySplitView">
 
-                <!-- ───────── SIDEBAR ───────── -->
-                <child>
+                <!-- SIDEBAR -->
+                <property name="sidebar">
                   <object class="GtkScrolledWindow">
                     <property name="width-request">260</property>
                     <property name="hscrollbar-policy">never</property>
-
                     <property name="child">
                       <object class="GtkListBox" id="nav_list">
                         <property name="selection-mode">single</property>
 
-                        <!-- Navigation Items -->
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">12</property>
-                                <property name="margin-start">16</property>
-                                <property name="margin-top">12</property>
-                                <property name="margin-bottom">12</property>
-
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">user-home-symbolic</property>
-                                    <property name="pixel-size">16</property>
-                                  </object>
-                                </child>
-
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Home</property>
-                                    <property name="xalign">0</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-
-                        <!-- Additional navigation items -->
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">12</property>
-                                <property name="margin-start">16</property>
-                                <property name="margin-top">12</property>
-                                <property name="margin-bottom">12</property>
-
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">avatar-default-symbolic</property>
-                                    <property name="pixel-size">16</property>
-                                  </object>
-                                </child>
-
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">About</property>
-                                    <property name="xalign">0</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">12</property>
-                                <property name="margin-start">16</property>
-                                <property name="margin-top">12</property>
-                                <property name="margin-bottom">12</property>
-
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">briefcase-symbolic</property>
-                                    <property name="pixel-size">16</property>
-                                  </object>
-                                </child>
-
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Experience</property>
-                                    <property name="xalign">0</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">12</property>
-                                <property name="margin-start">16</property>
-                                <property name="margin-top">12</property>
-                                <property name="margin-bottom">12</property>
-
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">folder-symbolic</property>
-                                    <property name="pixel-size">16</property>
-                                  </object>
-                                </child>
-
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Projects</property>
-                                    <property name="xalign">0</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">12</property>
-                                <property name="margin-start">16</property>
-                                <property name="margin-top">12</property>
-                                <property name="margin-bottom">12</property>
-
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">tools-symbolic</property>
-                                    <property name="pixel-size">16</property>
-                                  </object>
-                                </child>
-
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Skills</property>
-                                    <property name="xalign">0</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">12</property>
-                                <property name="margin-start">16</property>
-                                <property name="margin-top">12</property>
-                                <property name="margin-bottom">12</property>
-
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">trophy-symbolic</property>
-                                    <property name="pixel-size">16</property>
-                                  </object>
-                                </child>
-
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Achievements</property>
-                                    <property name="xalign">0</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
-
-                        <child>
-                          <object class="GtkListBoxRow">
-                            <child>
-                              <object class="GtkBox">
-                                <property name="orientation">horizontal</property>
-                                <property name="spacing">12</property>
-                                <property name="margin-start">16</property>
-                                <property name="margin-top">12</property>
-                                <property name="margin-bottom">12</property>
-
-                                <child>
-                                  <object class="GtkImage">
-                                    <property name="icon-name">mail-unread-symbolic</property>
-                                    <property name="pixel-size">16</property>
-                                  </object>
-                                </child>
-
-                                <child>
-                                  <object class="GtkLabel">
-                                    <property name="label">Contact</property>
-                                    <property name="xalign">0</property>
-                                  </object>
-                                </child>
-                              </object>
-                            </child>
-                          </object>
-                        </child>
+                        <child><object class="GtkListBoxRow"><property name="child"><object class="GtkLabel"><property name="label">About</property></object></property></object></child>
+                        <child><object class="GtkListBoxRow"><property name="child"><object class="GtkLabel"><property name="label">Experience</property></object></property></object></child>
+                        <child><object class="GtkListBoxRow"><property name="child"><object class="GtkLabel"><property name="label">Projects</property></object></property></object></child>
+                        <child><object class="GtkListBoxRow"><property name="child"><object class="GtkLabel"><property name="label">Skills</property></object></property></object></child>
+                        <child><object class="GtkListBoxRow"><property name="child"><object class="GtkLabel"><property name="label">Achievements</property></object></property></object></child>
+                        <child><object class="GtkListBoxRow"><property name="child"><object class="GtkLabel"><property name="label">Contact</property></object></property></object></child>
 
                       </object>
                     </property>
                   </object>
-                </child>
+                </property>
 
-                <!-- ───────── CONTENT ───────── -->
-                <child>
+                <!-- CONTENT -->
+                <property name="content">
                   <object class="AdwViewStack" id="view_stack">
-                    <property name="hexpand">true</property>
-                    <property name="vexpand">true</property>
-
-                    <!-- Pages -->
-                    <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioHeroPage"/></property></object></child>
-                    <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioAboutPage"/></property></object></child>
-                    <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioExperiencePage"/></property></object></child>
-                    <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioProjectsPage"/></property></object></child>
-                    <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioSkillsPage"/></property></object></child>
-                    <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioAchievementsPage"/></property></object></child>
-                    <child><object class="AdwViewStackPage"><property name="child"><object class="PortfolioContactPage"/></property></object></child>
-
+                    <child><object class="PortfolioAboutPage"/></child>
+                    <child><object class="PortfolioExperiencePage"/></child>
+                    <child><object class="PortfolioProjectsPage"/></child>
+                    <child><object class="PortfolioSkillsPage"/></child>
+                    <child><object class="PortfolioAchievementsPage"/></child>
+                    <child><object class="PortfolioContactPage"/></child>
                   </object>
-                </child>
+                </property>
 
               </object>
             </property>
           </object>
         </child>
+
       </object>
     </property>
   </template>
