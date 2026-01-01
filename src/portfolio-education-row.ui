@@ -4,7 +4,7 @@
   <requires lib="libadwaita" version="1.0"/>
 
   <template class="PortfolioEducationRow" parent="AdwActionRow">
-    <property name="activatable">false</property>
+    <property name="activatable">true</property>
     <property name="selectable">false</property>
 
     <!-- MAIN CONTENT -->
