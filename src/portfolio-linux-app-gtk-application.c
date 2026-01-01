@@ -123,6 +123,10 @@ static void
 portfolio_linux_app_gtk_application_init (PortfolioLinuxAppGtkApplication *self)
 {
     AdwStyleManager *style_manager;
+    GtkSettings *settings;
+
+    settings = gtk_settings_get_default ();
+    g_object_set (settings, "gtk-application-prefer-dark-theme", FALSE, NULL);
 
     g_action_map_add_action_entries (G_ACTION_MAP (self),
                                      app_actions,

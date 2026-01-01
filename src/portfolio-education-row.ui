@@ -7,37 +7,48 @@
     <property name="activatable">false</property>
     <property name="selectable">false</property>
 
-    <child>
+    <!-- MAIN CONTENT -->
+    <property name="child">
       <object class="GtkBox">
-        <property name="orientation">horizontal</property>
-        <property name="spacing">16</property>
+        <!-- overall row padding -->
         <property name="margin-top">12</property>
         <property name="margin-bottom">12</property>
+        <property name="margin-start">16</property>
+        <property name="margin-end">16</property>
 
-        <!-- CENTER -->
+        <property name="orientation">horizontal</property>
+        <property name="spacing">24</property>
+
+        <!-- LEFT SIDE -->
         <child>
           <object class="GtkBox">
             <property name="orientation">vertical</property>
+            <property name="spacing">6</property>
             <property name="hexpand">true</property>
-            <property name="spacing">4</property>
-            <property name="valign">center</property>
 
+            <!-- Degree -->
             <child>
               <object class="GtkLabel" id="degree_label">
                 <property name="xalign">0</property>
                 <property name="wrap">true</property>
-                <property name="css-classes">title-4</property>
+                <style>
+                  <class name="title-4"/>
+                </style>
               </object>
             </child>
 
+            <!-- Institute -->
             <child>
               <object class="GtkLabel" id="institute_label">
                 <property name="xalign">0</property>
                 <property name="wrap">true</property>
-                <property name="css-classes">dim-label</property>
+                <style>
+                  <class name="dim-label"/>
+                </style>
               </object>
             </child>
 
+            <!-- Duration -->
             <child>
               <object class="GtkBox">
                 <property name="orientation">horizontal</property>
@@ -46,31 +57,40 @@
                 <child>
                   <object class="GtkImage">
                     <property name="icon-name">month-symbolic</property>
-                    <property name="css-classes">dim-label</property>
+                    <style>
+                      <class name="dim-label"/>
+                    </style>
                   </object>
                 </child>
 
                 <child>
                   <object class="GtkLabel" id="duration_label">
                     <property name="xalign">0</property>
-                    <property name="css-classes">dim-label</property>
+                    <style>
+                      <class name="dim-label"/>
+                    </style>
                   </object>
                 </child>
               </object>
             </child>
+
           </object>
         </child>
 
-        <!-- RIGHT: GPA -->
+        <!-- RIGHT SIDE GPA -->
         <child>
           <object class="GtkLabel" id="gpa_label">
-            <property name="xalign">1</property>
+            <property name="halign">end</property>
             <property name="valign">center</property>
-            <property name="css-classes">monospace</property>
+            <style>
+              <class name="monospace"/>
+              <class name="dim-label"/>
+            </style>
           </object>
         </child>
+
       </object>
-    </child>
+    </property>
+
   </template>
 </interface>
-

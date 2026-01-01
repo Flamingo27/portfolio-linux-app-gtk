@@ -18,6 +18,7 @@
             <!-- HERO PAGE -->
             <child>
               <object class="AdwNavigationPage" id="hero_page">
+                <property name="title">Home</property>
                 <property name="can-pop">false</property>
                 <property name="child">
                   <object class="PortfolioHeroPage"/>
@@ -28,12 +29,14 @@
             <!-- MAIN PAGE -->
             <child>
               <object class="AdwNavigationPage" id="main_page">
+                <property name="title">Portfolio</property>
                 <property name="child">
                   <object class="AdwNavigationSplitView">
 
                     <!-- ========== SIDEBAR ========== -->
                     <property name="sidebar">
                       <object class="AdwNavigationPage">
+                        <property name="title">Menu</property>
                         <property name="child">
                           <object class="GtkScrolledWindow">
                             <property name="hscrollbar-policy">never</property>
@@ -71,6 +74,7 @@
                     <!-- ========== CONTENT ========== -->
                     <property name="content">
                       <object class="AdwNavigationPage">
+                        <property name="title"></property>
                         <property name="child">
                           <object class="AdwViewStack" id="view_stack">
                             <child><object class="PortfolioAboutPage"/></child>

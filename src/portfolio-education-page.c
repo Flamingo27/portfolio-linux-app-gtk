@@ -33,10 +33,7 @@ portfolio_education_page_init (PortfolioEducationPage *self)
 
   for (guint i = 0; i < num_education; i++) {
     GtkWidget *row =
-      GTK_WIDGET (portfolio_education_row_new (education[i].degree,
-                                              education[i].institution,
-                                              education[i].duration,
-                                              education[i].score));
+      GTK_WIDGET (portfolio_education_row_new (&education[i]));
     adw_preferences_group_add (self->group, row);
   }
 }

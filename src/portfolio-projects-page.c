@@ -41,10 +41,11 @@ portfolio_projects_page_init (PortfolioProjectsPage *self)
   for (gsize i = 0; i < num_projects; i++) {
     GtkWidget *card =
       GTK_WIDGET (portfolio_project_card_new (&projects[i]));
+    GtkListBoxRow *row;
 
     gtk_list_box_append (self->projects_list_box, card);
 
-    GtkListBoxRow *row =
+    row =
       GTK_LIST_BOX_ROW (gtk_widget_get_parent (card));
 
     gtk_list_box_row_set_activatable (row, TRUE);

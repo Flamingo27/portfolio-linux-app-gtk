@@ -18,7 +18,10 @@ on_open_url (GtkGestureClick *gesture,
              gpointer         user_data)
 {
   const gchar *url = user_data;
-  gtk_show_uri (NULL, url, GDK_CURRENT_TIME);
+  GtkUriLauncher *launcher = gtk_uri_launcher_new (url);
+
+  gtk_uri_launcher_launch (launcher, NULL, NULL, NULL, NULL);
+  g_object_unref(launcher);
 }
 
 static void
@@ -41,6 +44,7 @@ portfolio_publication_card_new (const Publication *publication)
   GtkWidget *type;
   GtkWidget *description;
   GtkGesture *click;
+  GtkWidget *icon;
 
   self = g_object_new (PORTFOLIO_TYPE_PUBLICATION_CARD, NULL);
 
@@ -69,7 +73,7 @@ portfolio_publication_card_new (const Publication *publication)
 
   adw_action_row_add_suffix (ADW_ACTION_ROW (self), content);
   
-  GtkWidget *icon = gtk_image_new_from_icon_name (publication->icon);
+  icon = gtk_image_new_from_icon_name (publication->icon);
   gtk_widget_set_valign(icon, GTK_ALIGN_START);
   adw_action_row_add_prefix (ADW_ACTION_ROW (self), icon);
 
