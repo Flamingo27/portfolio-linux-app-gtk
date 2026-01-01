@@ -1,9 +1,12 @@
 #pragma once
+
 #include <adwaita.h>
+#include "portfolio-data.h"
 
 G_BEGIN_DECLS
 
 #define PORTFOLIO_TYPE_EDUCATION_ROW (portfolio_education_row_get_type())
+
 G_DECLARE_FINAL_TYPE (
   PortfolioEducationRow,
   portfolio_education_row,
@@ -12,12 +15,7 @@ G_DECLARE_FINAL_TYPE (
   AdwActionRow
 )
 
-PortfolioEducationRow *portfolio_education_row_new (
-  const char *degree,
-  const char *institute,
-  const char *duration,
-  const char *gpa
-);
+PortfolioEducationRow *
+portfolio_education_row_new (const Education *edu);
 
 G_END_DECLS
-
