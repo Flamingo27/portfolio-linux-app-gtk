@@ -1,16 +1,17 @@
-#include "config.h"
 #include "portfolio-education-page.h"
 #include "portfolio-education-row.h"
 #include "portfolio-data.h"
 
-struct _PortfolioEducationPage
-{
+struct _PortfolioEducationPage {
   AdwBin parent_instance;
-
-  GtkBox *education_rows_container;
+  AdwPreferencesGroup *group;
 };
 
-G_DEFINE_FINAL_TYPE (PortfolioEducationPage, portfolio_education_page, ADW_TYPE_BIN)
+G_DEFINE_FINAL_TYPE (
+  PortfolioEducationPage,
+  portfolio_education_page,
+  ADW_TYPE_BIN
+)
 
 static void
 portfolio_education_page_class_init (PortfolioEducationPageClass *klass)
@@ -22,11 +23,7 @@ portfolio_education_page_class_init (PortfolioEducationPageClass *klass)
     "/org/alokparna/portfolio/gtk/portfolio-education-page.ui"
   );
 
-  gtk_widget_class_bind_template_child (
-    widget_class,
-    PortfolioEducationPage,
-    education_rows_container
-  );
+  gtk_widget_class_bind_template_child (widget_class, PortfolioEducationPage, group);
 }
 
 static void
@@ -34,8 +31,12 @@ portfolio_education_page_init (PortfolioEducationPage *self)
 {
   gtk_widget_init_template (GTK_WIDGET (self));
 
-  for (gsize i = 0; i < num_education; i++) {
-    PortfolioEducationRow *row = portfolio_education_row_new (&education[i]);
-    gtk_box_append (self->education_rows_container, GTK_WIDGET (row));
+  for (guint i = 0; i < num_education; i++) {
+    GtkWidget *row =
+      GTK_WIDGET (portfolio_education_row_new (education[i].degree,
+                                              education[i].institution,
+                                              education[i].duration,
+                                              education[i].score));
+    adw_preferences_group_add (self->group, row);
   }
 }

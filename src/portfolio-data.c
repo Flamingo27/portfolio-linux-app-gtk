@@ -45,7 +45,7 @@ Experience experiences[] = {
   {
     .role = "Co-Founder",
     .company = "Cura Horizon",
-    .duration = "2024 – Present",
+    .duration = "2024 — Present",
     .description = "Developing an AI-integrated healthcare platform with hospital finder, emergency medicine assistance, and IoT device integration.",
     .location = "Remote",
     .highlights = (const gchar **)cura_horizon_highlights,
@@ -54,7 +54,7 @@ Experience experiences[] = {
   {
     .role = "Lab Intern",
     .company = "IIC, IIFR",
-    .duration = "2024 – Present",
+    .duration = "2024 — Present",
     .description = "Prototyped healthcare-focused hardware-software solutions using embedded systems and IoT development tools.",
     .location = "Kolkata, WB",
     .highlights = (const gchar **)iic_iifr_highlights,
@@ -63,7 +63,7 @@ Experience experiences[] = {
   {
     .role = "Social Media Manager",
     .company = "IETE IEM Students' Forum",
-    .duration = "2025 – Present",
+    .duration = "2025 — Present",
     .description = "Managing digital presence and improving engagement across multiple social platforms.",
     .location = "Kolkata, WB",
     .highlights = (const gchar **)iete_highlights,
@@ -144,7 +144,7 @@ const Project projects[] = {
   },
   {
     .title = "Assistive Healthcare Devices",
-    .subtitle = "Alzheimer's Glass & Accu-Pressure Glove",
+    .subtitle = "Alzheimer's Glass &amp; Accu-Pressure Glove",
     .description = "Created innovative healthcare devices with audio/video assistance and accessible UI/UX using Raspberry Pi.",
     .tech = assistive_tech,
     .n_tech = G_N_ELEMENTS(assistive_tech) - 1,
@@ -271,8 +271,8 @@ const Education education[] = {
     .institution = "Institute of Engineering & Management (IEM)",
     .degree = "B.Tech in Computer Science & Engineering",
     .score = "9.1 GPA",
-    .duration = "2024 – Present",
-    .logo = "school-symbolic", // Using generic icon for now
+    .duration = "2024 — Present",
+    .logo = "school-symbolic",
     .location = "Salt Lake, Kolkata, WB",
     .highlight = TRUE
   },
@@ -280,8 +280,8 @@ const Education education[] = {
     .institution = "Burdwan Model School",
     .degree = "Senior Secondary (CBSE) — PCM Stream with Computer Science",
     .score = "84.4%",
-    .duration = "2022 – 2024",
-    .logo = "school-symbolic", // Using generic icon for now
+    .duration = "2022 — 2024",
+    .logo = "school-symbolic",
     .location = "Burdwan, WB",
     .highlight = FALSE
   },
@@ -289,8 +289,8 @@ const Education education[] = {
     .institution = "St. Paul's Academy",
     .degree = "Secondary (ICSE)",
     .score = "98.6%",
-    .duration = "2012 – 2022",
-    .logo = "school-symbolic", // Using generic icon for now
+    .duration = "2012 — 2022",
+    .logo = "school-symbolic",
     .location = "Burdwan, WB",
     .highlight = TRUE
   }
@@ -315,4 +315,3 @@ portfolio_data_cleanup (void)
 {
   g_hash_table_unref (cura_horizon_links);
 }
-

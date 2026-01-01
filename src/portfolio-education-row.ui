@@ -1,57 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <interface>
   <requires lib="gtk" version="4.0"/>
-  <requires lib="Adw" version="1.0"/>
+  <requires lib="libadwaita" version="1.0"/>
 
-  <template class="PortfolioEducationRow" parent="AdwBin">
-    <style><class name="card"/></style>
-    <property name="vexpand">false</property>
-    <property name="hexpand">true</property>
-    <property name="width-request">400</property>
+  <template class="PortfolioEducationRow" parent="AdwActionRow">
+    <property name="activatable">false</property>
+    <property name="selectable">false</property>
 
-    <property name="child">
+    <child>
       <object class="GtkBox">
-        <property name="orientation">vertical</property>
-        <property name="spacing">12</property>
-        <property name="margin-start">16</property>
-        <property name="margin-end">16</property>
-        <property name="margin-top">16</property>
-        <property name="margin-bottom">16</property>
+        <property name="orientation">horizontal</property>
+        <property name="spacing">16</property>
+        <property name="margin-top">12</property>
+        <property name="margin-bottom">12</property>
 
+        <!-- CENTER -->
         <child>
           <object class="GtkBox">
-            <property name="orientation">horizontal</property>
-            <property name="spacing">16</property>
+            <property name="orientation">vertical</property>
+            <property name="hexpand">true</property>
+            <property name="spacing">4</property>
+            <property name="valign">center</property>
+
             <child>
-              <object class="GtkImage" id="education_logo">
-                <property name="icon-name">school-symbolic</property>
-                <property name="pixel-size">32</property>
-                <property name="margin-top">4</property>
+              <object class="GtkLabel" id="degree_label">
+                <property name="xalign">0</property>
+                <property name="wrap">true</property>
+                <property name="css-classes">title-4</property>
               </object>
             </child>
+
+            <child>
+              <object class="GtkLabel" id="institute_label">
+                <property name="xalign">0</property>
+                <property name="wrap">true</property>
+                <property name="css-classes">dim-label</property>
+              </object>
+            </child>
+
             <child>
               <object class="GtkBox">
-                <property name="orientation">vertical</property>
-                <property name="spacing">0</property>
+                <property name="orientation">horizontal</property>
+                <property name="spacing">6</property>
+
                 <child>
-                  <object class="GtkLabel" id="education_degree">
-                    <property name="wrap">true</property>
-                    <property name="xalign">0</property>
-                    <style><class name="title-4"/></style>
+                  <object class="GtkImage">
+                    <property name="icon-name">month-symbolic</property>
+                    <property name="css-classes">dim-label</property>
                   </object>
                 </child>
+
                 <child>
-                  <object class="GtkLabel" id="education_institution">
-                    <property name="wrap">true</property>
+                  <object class="GtkLabel" id="duration_label">
                     <property name="xalign">0</property>
-                    <style><class name="body"/></style>
-                  </object>
-                </child>
-                <child>
-                  <object class="GtkLabel" id="education_location">
-                    <property name="wrap">true</property>
-                    <property name="xalign">0</property>
-                    <style><class name="body"/></style>
+                    <property name="css-classes">dim-label</property>
                   </object>
                 </child>
               </object>
@@ -59,36 +61,16 @@
           </object>
         </child>
 
+        <!-- RIGHT: GPA -->
         <child>
-          <object class="GtkBox">
-            <property name="orientation">horizontal</property>
-            <property name="spacing">8</property>
-            <property name="margin-top">8</property>
-            <child>
-              <object class="GtkImage">
-                <property name="icon-name">month-symbolic</property>
-                <property name="pixel-size">16</property>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel" id="education_duration">
-                <property name="wrap">true</property>
-                <property name="xalign">0</property>
-                <style><class name="body"/></style>
-              </object>
-            </child>
-            <child>
-              <object class="GtkLabel" id="education_score">
-                <property name="wrap">true</property>
-                <property name="xalign">1</property>
-                <property name="hexpand">true</property>
-                <style><class name="body"/></style>
-              </object>
-            </child>
+          <object class="GtkLabel" id="gpa_label">
+            <property name="xalign">1</property>
+            <property name="valign">center</property>
+            <property name="css-classes">monospace</property>
           </object>
         </child>
-
       </object>
-    </property>
+    </child>
   </template>
 </interface>
+
