@@ -48,7 +48,7 @@
                                   <class name="navigation-sidebar"/>
                                 </style>
 
-                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">About</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">About Me</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Education</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
@@ -58,9 +58,9 @@
 
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Skills</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
-                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Achievements</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Achievements &amp; Recognition</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
-                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Publications</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
+                                <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Publications &amp; Publications</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 
                                 <child><object class="GtkListBoxRow"><child><object class="GtkLabel"><property name="label">Contact</property><property name="xalign">0</property><property name="margin-start">16</property><property name="margin-top">12</property><property name="margin-bottom">12</property></object></child></object></child>
 

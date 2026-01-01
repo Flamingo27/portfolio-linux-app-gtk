@@ -268,8 +268,8 @@ const gsize num_publications = G_N_ELEMENTS(publications);
 
 const Education education[] = {
   {
-    .institution = "Institute of Engineering &amp; Management (IEM)",
-    .degree = "B.Tech in Computer Science &amp; Engineering",
+    .institution = "Institute of Engineering & Management (IEM)",
+    .degree = "B.Tech in Computer Science & Engineering",
     .score = "9.1 GPA",
     .duration = "2024 — Present",
     .logo = "school-symbolic",
